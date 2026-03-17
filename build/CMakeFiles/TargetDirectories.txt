@@ -1,0 +1,3 @@
+D:/my Files/My projects/Programming/C++/projects/Nidaa/build/CMakeFiles/Nidaa.dir
+D:/my Files/My projects/Programming/C++/projects/Nidaa/build/CMakeFiles/ALL_BUILD.dir
+D:/my Files/My projects/Programming/C++/projects/Nidaa/build/CMakeFiles/ZERO_CHECK.dir

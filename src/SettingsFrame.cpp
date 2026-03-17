@@ -1,0 +1,391 @@
+#include "SettingsFrame.h"
+#include "TrayIcon.h"
+#include "Config.h"
+#include "Cities.h"
+#include <wx/sizer.h>
+#include <wx/msw/wrapwin.h>
+
+SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
+    : wxFrame(nullptr, wxID_ANY,
+              Lang::SettingsTitle(Language::AR),
+              wxDefaultPosition, wxSize(450, 500),
+              wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX))
+    , m_tray(tray)
+{
+    auto* panel = new wxPanel(this);
+    auto* mainSizer = new wxBoxSizer(wxVERTICAL);
+
+    // Language selection
+    {
+        m_lblLang = new wxStaticText(panel, wxID_ANY, Lang::LanguageLabel(Language::AR));
+        mainSizer->Add(m_lblLang, 0, wxALL, 5);
+
+        m_langChoice = new wxChoice(panel, ID_LANG);
+        m_langChoice->SetName(L"Language");
+        m_langChoice->Append(L"\x0627\x0644\x0639\x0631\x0628\x064A\x0629"); // العربية
+        m_langChoice->Append(L"English");
+        m_langChoice->SetSelection(0);
+        mainSizer->Add(m_langChoice, 0, wxEXPAND | wxALL, 5);
+        m_langChoice->Bind(wxEVT_CHOICE, &SettingsFrame::OnLanguageChanged, this, ID_LANG);
+    }
+
+    // Country selection
+    {
+        m_lblCountry = new wxStaticText(panel, wxID_ANY, Lang::CountryLabel(Language::AR));
+        mainSizer->Add(m_lblCountry, 0, wxALL, 5);
+
+        m_countryChoice = new wxChoice(panel, ID_COUNTRY);
+        m_countryChoice->SetName(Lang::CountryLabel(Language::AR));
+        mainSizer->Add(m_countryChoice, 0, wxEXPAND | wxALL, 5);
+        m_countryChoice->Bind(wxEVT_CHOICE, &SettingsFrame::OnCountryChanged, this, ID_COUNTRY);
+    }
+
+    // Region selection
+    {
+        m_lblRegion = new wxStaticText(panel, wxID_ANY, Lang::RegionLabel(Language::AR));
+        mainSizer->Add(m_lblRegion, 0, wxALL, 5);
+
+        m_regionChoice = new wxChoice(panel, ID_REGION);
+        m_regionChoice->SetName(Lang::RegionLabel(Language::AR));
+        mainSizer->Add(m_regionChoice, 0, wxEXPAND | wxALL, 5);
+        m_regionChoice->Bind(wxEVT_CHOICE, &SettingsFrame::OnRegionChanged, this, ID_REGION);
+    }
+
+    // City selection
+    {
+        m_lblCity = new wxStaticText(panel, wxID_ANY, Lang::CityLabel(Language::AR));
+        mainSizer->Add(m_lblCity, 0, wxALL, 5);
+
+        m_cityChoice = new wxChoice(panel, wxID_ANY);
+        m_cityChoice->SetName(Lang::CityLabel(Language::AR));
+        mainSizer->Add(m_cityChoice, 0, wxEXPAND | wxALL, 5);
+    }
+
+    // Hotkey settings
+    {
+        m_lblHotkey = new wxStaticText(panel, wxID_ANY, Lang::HotkeyLabel(Language::AR));
+        mainSizer->Add(m_lblHotkey, 0, wxALL, 5);
+
+        auto* modSizer = new wxBoxSizer(wxHORIZONTAL);
+        m_chkCtrl = new wxCheckBox(panel, wxID_ANY, L"Ctrl");
+        m_chkAlt = new wxCheckBox(panel, wxID_ANY, L"Alt");
+        m_chkShift = new wxCheckBox(panel, wxID_ANY, L"Shift");
+        modSizer->Add(m_chkCtrl, 0, wxALL, 5);
+        modSizer->Add(m_chkAlt, 0, wxALL, 5);
+        modSizer->Add(m_chkShift, 0, wxALL, 5);
+        mainSizer->Add(modSizer, 0, wxEXPAND);
+
+        m_lblKey = new wxStaticText(panel, wxID_ANY, Lang::KeyLabel(Language::AR));
+        mainSizer->Add(m_lblKey, 0, wxALL, 5);
+
+        m_keyText = new wxTextCtrl(panel, wxID_ANY, L"P");
+        m_keyText->SetName(Lang::KeyLabel(Language::AR));
+        m_keyText->SetMaxLength(1);
+        mainSizer->Add(m_keyText, 0, wxEXPAND | wxALL, 5);
+    }
+
+    // Save button
+    {
+        m_saveBtn = new wxButton(panel, ID_SAVE, Lang::SaveButton(Language::AR));
+        mainSizer->Add(m_saveBtn, 0, wxALIGN_CENTER | wxALL, 10);
+        m_saveBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnSave, this);
+    }
+
+    panel->SetSizer(mainSizer);
+    Bind(wxEVT_CLOSE_WINDOW, &SettingsFrame::OnClose, this);
+
+    LoadCurrentSettings();
+}
+
+void SettingsFrame::PopulateCountries() {
+    m_countryChoice->Freeze();
+    m_countryChoice->Clear();
+    m_countryIds.clear();
+
+    const auto& countries = CitiesDatabase::Instance().GetCountries();
+    for (const auto& c : countries) {
+        if (m_currentLang == Language::AR)
+            m_countryChoice->Append(c.nameAr);
+        else
+            m_countryChoice->Append(c.nameEn);
+        m_countryIds.push_back(c.id);
+    }
+    if (!countries.empty())
+        m_countryChoice->SetSelection(0);
+
+    m_countryChoice->Thaw();
+}
+
+void SettingsFrame::PopulateRegions() {
+    m_regionChoice->Freeze();
+    m_regionChoice->Clear();
+    m_stateIds.clear();
+    m_saudiRegionIds.clear();
+
+    if (IsSaudiSelected()) {
+        const auto& regions = CitiesDatabase::Instance().GetSaudiRegions();
+        for (const auto& r : regions) {
+            if (m_currentLang == Language::AR)
+                m_regionChoice->Append(r.nameAr);
+            else
+                m_regionChoice->Append(r.nameEn);
+            m_saudiRegionIds.push_back(r.regionId);
+        }
+    } else {
+        int countryId = GetSelectedCountryId();
+        if (countryId > 0) {
+            auto states = CitiesDatabase::Instance().GetStatesByCountry(countryId);
+            for (const auto* s : states) {
+                if (m_currentLang == Language::AR)
+                    m_regionChoice->Append(s->nameAr);
+                else
+                    m_regionChoice->Append(s->nameEn);
+                m_stateIds.push_back(s->id);
+            }
+        }
+    }
+
+    if (m_regionChoice->GetCount() > 0)
+        m_regionChoice->SetSelection(0);
+
+    m_regionChoice->Thaw();
+}
+
+void SettingsFrame::PopulateCities() {
+    m_cityChoice->Freeze();
+    m_cityChoice->Clear();
+    m_saudiCityIds.clear();
+
+    if (IsSaudiSelected()) {
+        int regionSel = m_regionChoice->GetSelection();
+        if (regionSel >= 0 && regionSel < static_cast<int>(m_saudiRegionIds.size())) {
+            int regionId = m_saudiRegionIds[regionSel];
+            auto cities = CitiesDatabase::Instance().GetSaudiCitiesByRegion(regionId);
+            for (const auto* c : cities) {
+                if (m_currentLang == Language::AR)
+                    m_cityChoice->Append(c->nameAr);
+                else
+                    m_cityChoice->Append(c->nameEn);
+                m_saudiCityIds.push_back(c->cityId);
+            }
+        }
+        m_cityChoice->Enable(true);
+        if (m_cityChoice->GetCount() > 0)
+            m_cityChoice->SetSelection(0);
+    } else {
+        m_cityChoice->Enable(false);
+    }
+
+    m_cityChoice->Thaw();
+}
+
+void SettingsFrame::RefreshUI() {
+    SetTitle(Lang::SettingsTitle(m_currentLang));
+    m_lblLang->SetLabel(Lang::LanguageLabel(m_currentLang));
+    m_lblCountry->SetLabel(Lang::CountryLabel(m_currentLang));
+    m_lblRegion->SetLabel(Lang::RegionLabel(m_currentLang));
+    m_lblCity->SetLabel(Lang::CityLabel(m_currentLang));
+    m_lblHotkey->SetLabel(Lang::HotkeyLabel(m_currentLang));
+    m_lblKey->SetLabel(Lang::KeyLabel(m_currentLang));
+    m_saveBtn->SetLabel(Lang::SaveButton(m_currentLang));
+    m_countryChoice->SetName(Lang::CountryLabel(m_currentLang));
+    m_regionChoice->SetName(Lang::RegionLabel(m_currentLang));
+    m_cityChoice->SetName(Lang::CityLabel(m_currentLang));
+    m_keyText->SetName(Lang::KeyLabel(m_currentLang));
+
+    // Remember current selections
+    int savedCountrySel = m_countryChoice->GetSelection();
+    int savedRegionSel = m_regionChoice->GetSelection();
+    int savedCitySel = m_cityChoice->GetSelection();
+
+    PopulateCountries();
+
+    if (savedCountrySel >= 0 && savedCountrySel < static_cast<int>(m_countryChoice->GetCount()))
+        m_countryChoice->SetSelection(savedCountrySel);
+
+    PopulateRegions();
+
+    if (savedRegionSel >= 0 && savedRegionSel < static_cast<int>(m_regionChoice->GetCount()))
+        m_regionChoice->SetSelection(savedRegionSel);
+
+    PopulateCities();
+
+    if (savedCitySel >= 0 && savedCitySel < static_cast<int>(m_cityChoice->GetCount()))
+        m_cityChoice->SetSelection(savedCitySel);
+
+    // Set layout direction
+    if (m_currentLang == Language::AR) {
+        SetLayoutDirection(wxLayout_RightToLeft);
+    } else {
+        SetLayoutDirection(wxLayout_LeftToRight);
+    }
+
+    Layout();
+}
+
+void SettingsFrame::OnLanguageChanged(wxCommandEvent&) {
+    int sel = m_langChoice->GetSelection();
+    m_currentLang = (sel == 1) ? Language::EN : Language::AR;
+    RefreshUI();
+}
+
+void SettingsFrame::OnCountryChanged(wxCommandEvent&) {
+    PopulateRegions();
+    PopulateCities();
+}
+
+void SettingsFrame::OnRegionChanged(wxCommandEvent&) {
+    PopulateCities();
+}
+
+void SettingsFrame::LoadCurrentSettings() {
+    AppConfig config;
+    ConfigLoad(config);
+
+    m_currentLang = static_cast<Language>(config.language);
+    m_langChoice->SetSelection(config.language);
+
+    // Populate countries
+    PopulateCountries();
+
+    // Find and select the saved country
+    const auto* country = CitiesDatabase::Instance().FindCountryByIso2(config.countryIso2);
+    if (country) {
+        for (int i = 0; i < static_cast<int>(m_countryIds.size()); ++i) {
+            if (m_countryIds[i] == country->id) {
+                m_countryChoice->SetSelection(i);
+                break;
+            }
+        }
+    }
+
+    // Populate regions for the selected country
+    PopulateRegions();
+
+    if (IsSaudiSelected()) {
+        // Find the region that contains the saved Saudi city
+        const CityInfo* city = CitiesDatabase::Instance().FindSaudiCityById(config.saudiCityId);
+        if (city) {
+            // Select the region
+            for (int i = 0; i < static_cast<int>(m_saudiRegionIds.size()); ++i) {
+                if (m_saudiRegionIds[i] == city->regionId) {
+                    m_regionChoice->SetSelection(i);
+                    break;
+                }
+            }
+
+            // Populate cities for that region
+            PopulateCities();
+
+            // Select the city
+            for (int i = 0; i < static_cast<int>(m_saudiCityIds.size()); ++i) {
+                if (m_saudiCityIds[i] == config.saudiCityId) {
+                    m_cityChoice->SetSelection(i);
+                    break;
+                }
+            }
+        } else {
+            PopulateCities();
+        }
+    } else {
+        // Non-Saudi: find and select the saved state
+        if (config.stateId > 0) {
+            for (int i = 0; i < static_cast<int>(m_stateIds.size()); ++i) {
+                if (m_stateIds[i] == config.stateId) {
+                    m_regionChoice->SetSelection(i);
+                    break;
+                }
+            }
+        }
+        PopulateCities();
+    }
+
+    // Hotkey
+    m_chkCtrl->SetValue((config.hotkeyModifiers & MOD_CONTROL) != 0);
+    m_chkAlt->SetValue((config.hotkeyModifiers & MOD_ALT) != 0);
+    m_chkShift->SetValue((config.hotkeyModifiers & MOD_SHIFT) != 0);
+
+    if (config.hotkeyVK >= 'A' && config.hotkeyVK <= 'Z') {
+        wchar_t ch = static_cast<wchar_t>(config.hotkeyVK);
+        m_keyText->SetValue(std::wstring(1, ch));
+    }
+
+    RefreshUI();
+}
+
+void SettingsFrame::OnSave(wxCommandEvent&) {
+    AppConfig config;
+
+    // Language
+    config.language = m_langChoice->GetSelection();
+
+    // Country
+    int countrySel = m_countryChoice->GetSelection();
+    if (countrySel >= 0 && countrySel < static_cast<int>(m_countryIds.size())) {
+        int countryId = m_countryIds[countrySel];
+        const auto* country = CitiesDatabase::Instance().FindCountryById(countryId);
+        if (country) {
+            config.countryIso2 = country->iso2;
+        }
+    }
+
+    if (IsSaudiSelected()) {
+        config.stateId = 0;
+        int citySel = m_cityChoice->GetSelection();
+        if (citySel >= 0 && citySel < static_cast<int>(m_saudiCityIds.size())) {
+            config.saudiCityId = m_saudiCityIds[citySel];
+        }
+    } else {
+        config.saudiCityId = 0;
+        int regionSel = m_regionChoice->GetSelection();
+        if (regionSel >= 0 && regionSel < static_cast<int>(m_stateIds.size())) {
+            config.stateId = m_stateIds[regionSel];
+        }
+    }
+
+    // Hotkey
+    int mod = 0;
+    if (m_chkCtrl->GetValue()) mod |= MOD_CONTROL;
+    if (m_chkAlt->GetValue()) mod |= MOD_ALT;
+    if (m_chkShift->GetValue()) mod |= MOD_SHIFT;
+    config.hotkeyModifiers = mod;
+
+    wxString keyStr = m_keyText->GetValue().Upper();
+    if (!keyStr.IsEmpty()) {
+        config.hotkeyVK = static_cast<int>(keyStr[0]);
+    }
+
+    ConfigSave(config);
+
+    // Re-register hotkey
+    HWND hwnd = static_cast<HWND>(wxTheApp->GetTopWindow()->GetHandle());
+    m_tray->UnregisterGlobalHotkey(hwnd);
+    m_tray->RegisterGlobalHotkey(hwnd, config.hotkeyModifiers, config.hotkeyVK);
+
+    // Update tray tooltip
+    m_tray->UpdateTooltip();
+
+    Hide();
+}
+
+void SettingsFrame::OnClose(wxCloseEvent& evt) {
+    if (evt.CanVeto()) {
+        evt.Veto();
+        Hide();
+    } else {
+        Destroy();
+    }
+}
+
+bool SettingsFrame::IsSaudiSelected() const {
+    int countryId = GetSelectedCountryId();
+    return countryId == CitiesDatabase::SAUDI_COUNTRY_ID;
+}
+
+int SettingsFrame::GetSelectedCountryId() const {
+    int sel = m_countryChoice->GetSelection();
+    if (sel >= 0 && sel < static_cast<int>(m_countryIds.size())) {
+        return m_countryIds[sel];
+    }
+    return -1;
+}

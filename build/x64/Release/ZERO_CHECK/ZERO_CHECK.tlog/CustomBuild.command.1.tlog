@@ -1,0 +1,10 @@
+^D:\MY FILES\MY PROJECTS\PROGRAMMING\C++\PROJECTS\NIDAA\BUILD\CMAKEFILES\49F6B6FE49BCAD007C3C5D4F19CE2CBA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/my Files/My projects/Programming/C++/projects/Nidaa" "-BD:/my Files/My projects/Programming/C++/projects/Nidaa/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/my Files/My projects/Programming/C++/projects/Nidaa/build/Nidaa.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
