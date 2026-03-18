@@ -41,11 +41,16 @@ public:
         auto& dm = DataManager::Instance();
         bool firstLaunch = IsFirstLaunch();
 
+        // Load config early so we know the language
+        AppConfig config;
+        ConfigLoad(config);
+        Language lang = static_cast<Language>(config.language);
+
         // Download/cache data if needed
         if (!dm.IsWorldDataCached()) {
-            SpeechSay(Lang::DownloadingData(Language::AR));
+            SpeechSay(Lang::DownloadingData(lang));
             if (!dm.DownloadWorldData()) {
-                SpeechSay(Lang::DownloadFailed(Language::AR));
+                SpeechSay(Lang::DownloadFailed(lang));
                 // Continue anyway - Saudi bundled data may still work
             }
         }
@@ -54,9 +59,6 @@ public:
         auto& db = CitiesDatabase::Instance();
         db.LoadWorldData(dm.GetCacheDir());
         db.LoadSaudiData(dm.GetCacheDir());
-
-        AppConfig config;
-        ConfigLoad(config);
 
         m_trayIcon = new NidaaTrayIcon();
 
@@ -71,8 +73,15 @@ public:
 
         SetTopWindow(m_hotkeyFrame);
 
-        // Show settings on first launch
-        if (firstLaunch) {
+        // Show settings on first launch or when --settings argument is passed
+        bool showSettings = firstLaunch;
+        for (int i = 1; i < argc; ++i) {
+            if (wxString(argv[i]) == L"--settings") {
+                showSettings = true;
+                break;
+            }
+        }
+        if (showSettings) {
             m_settingsFrame->Show(true);
             m_settingsFrame->Raise();
         }
