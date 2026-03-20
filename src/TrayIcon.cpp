@@ -12,6 +12,18 @@
 
 static const int HOTKEY_ID = 1;
 
+// Iqama offset in minutes per prayer (0 = no iqama, e.g. sunrise)
+static int GetIqamaOffsetMinutes(int prayer) {
+    switch (prayer) {
+        case FAJR:    return 25;
+        case DHUHR:   return 20;
+        case ASR:     return 20;
+        case MAGHRIB: return 10;
+        case ISHA:    return 20;
+        default:      return 0;
+    }
+}
+
 NidaaTrayIcon::NidaaTrayIcon() {
     UpdateTooltip();
 }
@@ -143,12 +155,15 @@ void NidaaTrayIcon::OnHotkeyPressed() {
     AppendDuration(oss, info.remainingMinutes, lang);
     oss << L". ";
 
-    // Elapsed since previous
+    // Iqama countdown (only during iqama window)
     if (info.prevPrayer >= 0) {
-        oss << Lang::ElapsedSince(lang);
-        oss << PrayerTimesCalculator::GetPrayerName(info.prevPrayer, lang) << L": ";
-        AppendDuration(oss, info.elapsedMinutes, lang);
-        oss << L".";
+        int iqamaOffset = GetIqamaOffsetMinutes(info.prevPrayer);
+        if (iqamaOffset > 0 && info.elapsedMinutes < iqamaOffset) {
+            int iqamaRemaining = iqamaOffset - info.elapsedMinutes;
+            oss << Lang::IqamaIn(lang);
+            AppendDuration(oss, iqamaRemaining, lang);
+            oss << L".";
+        }
     }
 
     SpeechSay(oss.str());

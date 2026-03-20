@@ -23,10 +23,11 @@ add_executable(Nidaa WIN32
     src/Lang.cpp
     src/CalcMethod.cpp
     src/DataManager.cpp
+    src/Updater.cpp
 )
 
 target_include_directories(Nidaa PRIVATE src)
-target_link_libraries(Nidaa PRIVATE ${wxWidgets_LIBRARIES} nlohmann_json::nlohmann_json urlmon)
+target_link_libraries(Nidaa PRIVATE ${wxWidgets_LIBRARIES} nlohmann_json::nlohmann_json urlmon wininet)
 
 # Copy UniversalSpeech DLLs to output directory
 set(US_DLL_DIR "D:/my Files/My projects/Programming/C++/Libraries/UniversalSpeech/bin/64")

@@ -6,6 +6,8 @@
 #include "Config.h"
 #include "Cities.h"
 #include "DataManager.h"
+#include "Updater.h"
+#include "Lang.h"
 
 static const int HOTKEY_ID = 1;
 
@@ -72,6 +74,18 @@ public:
         m_trayIcon->RegisterGlobalHotkey(hwnd, config.hotkeyModifiers, config.hotkeyVK);
 
         SetTopWindow(m_hotkeyFrame);
+
+        // Check for updates - download installer and run it
+        {
+            std::wstring installerPath;
+            if (Updater::CheckForUpdate(installerPath)) {
+                SpeechSay(Lang::UpdateAvailable(lang));
+                // Launch installer silently and exit
+                ShellExecuteW(nullptr, L"open", installerPath.c_str(),
+                              L"/SILENT", nullptr, SW_SHOWNORMAL);
+                return false;  // Exit the app so installer can replace files
+            }
+        }
 
         // Show settings on first launch or when --settings argument is passed
         bool showSettings = firstLaunch;

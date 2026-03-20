@@ -129,6 +129,24 @@ const wchar_t* And(Language lang) {
         : L" and ";
 }
 
+const wchar_t* IqamaIn(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x0625\x0642\x0627\x0645\x0629 \x0628\x0639\x062F: " // الإقامة بعد:
+        : L"Iqama in: ";
+}
+
+const wchar_t* DownloadingUpdate(Language lang) {
+    return lang == Language::AR
+        ? L"\x062C\x0627\x0631\x064A \x062A\x062D\x0645\x064A\x0644 \x0627\x0644\x062A\x062D\x062F\x064A\x062B..." // جاري تحميل التحديث...
+        : L"Downloading update...";
+}
+
+const wchar_t* UpdateAvailable(Language lang) {
+    return lang == Language::AR
+        ? L"\x062C\x0627\x0631\x064A \x062A\x062B\x0628\x064A\x062A \x0627\x0644\x062A\x062D\x062F\x064A\x062B" // جاري تثبيت التحديث
+        : L"Installing update...";
+}
+
 const wchar_t* DownloadingData(Language lang) {
     return lang == Language::AR
         ? L"\x062C\x0627\x0631\x064A \x062A\x062D\x0645\x064A\x0644 \x0627\x0644\x0628\x064A\x0627\x0646\x0627\x062A..." // جاري تحميل البيانات...

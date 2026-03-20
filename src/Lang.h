@@ -30,7 +30,14 @@ namespace Lang {
     const wchar_t* Minute(Language lang);
     const wchar_t* And(Language lang);
 
+    // Iqama
+    const wchar_t* IqamaIn(Language lang);
+
     // Download
     const wchar_t* DownloadingData(Language lang);
     const wchar_t* DownloadFailed(Language lang);
+
+    // Update
+    const wchar_t* UpdateAvailable(Language lang);
+    const wchar_t* DownloadingUpdate(Language lang);
 }
