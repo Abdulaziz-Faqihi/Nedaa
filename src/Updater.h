@@ -2,7 +2,7 @@
 #include <string>
 
 // Current application version
-#define NIDAA_VERSION "1.1.0"
+#define NIDAA_VERSION "1.2.0"
 
 namespace Updater {
     // Check GitHub releases for a newer version.

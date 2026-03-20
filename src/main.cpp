@@ -87,18 +87,9 @@ public:
             }
         }
 
-        // Show settings on first launch or when --settings argument is passed
-        bool showSettings = firstLaunch;
-        for (int i = 1; i < argc; ++i) {
-            if (wxString(argv[i]) == L"--settings") {
-                showSettings = true;
-                break;
-            }
-        }
-        if (showSettings) {
-            m_settingsFrame->Show(true);
-            m_settingsFrame->Raise();
-        }
+        // Always show settings when the app is launched
+        m_settingsFrame->Show(true);
+        m_settingsFrame->Raise();
 
         return true;
     }
