@@ -20,9 +20,10 @@ private:
     wxMenu* CreatePopupMenu() override;
 
     void OnSettings(wxCommandEvent& evt);
+    void OnCheckUpdate(wxCommandEvent& evt);
     void OnExit(wxCommandEvent& evt);
 
     SettingsFrame* m_settingsFrame = nullptr;
 
-    enum { ID_SETTINGS = 10001, ID_EXIT };
+    enum { ID_SETTINGS = 10001, ID_CHECK_UPDATE, ID_EXIT };
 };

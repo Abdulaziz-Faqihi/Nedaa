@@ -8,6 +8,7 @@ struct AppConfig {
     int hotkeyModifiers = 0x0006;  // MOD_CONTROL | MOD_ALT
     int hotkeyVK = 'P';
     int language = 0;              // 0=AR, 1=EN
+    int calcMethod = -1;           // -1=Auto (from country), 0-7=specific method
 };
 
 bool ConfigLoad(AppConfig& config);

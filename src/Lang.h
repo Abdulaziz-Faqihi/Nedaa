@@ -40,4 +40,12 @@ namespace Lang {
     // Update
     const wchar_t* UpdateAvailable(Language lang);
     const wchar_t* DownloadingUpdate(Language lang);
+    const wchar_t* MenuCheckUpdate(Language lang);
+    const wchar_t* CheckUpdateButton(Language lang);
+    const wchar_t* NoUpdateAvailable(Language lang);
+
+    // Calculation method
+    const wchar_t* CalcMethodLabel(Language lang);
+    const wchar_t* CalcMethodName(int index, Language lang);
+    const wchar_t* CalcMethodAuto(Language lang);
 }

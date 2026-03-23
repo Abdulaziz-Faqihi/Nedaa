@@ -44,6 +44,8 @@ bool ConfigLoad(AppConfig& config) {
             config.hotkeyVK = j["hotkeyVK"].get<int>();
         if (j.contains("language"))
             config.language = j["language"].get<int>();
+        if (j.contains("calcMethod"))
+            config.calcMethod = j["calcMethod"].get<int>();
     } catch (...) {
         return false;
     }
@@ -58,6 +60,7 @@ bool ConfigSave(const AppConfig& config) {
     j["hotkeyMod"] = config.hotkeyModifiers;
     j["hotkeyVK"] = config.hotkeyVK;
     j["language"] = config.language;
+    j["calcMethod"] = config.calcMethod;
 
     std::wstring path = ConfigGetPath();
     std::ofstream f(path);

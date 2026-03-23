@@ -5,7 +5,9 @@
 #include "Speech.h"
 #include "Config.h"
 #include "Cities.h"
+#include "CalcMethod.h"
 #include "Lang.h"
+#include "Updater.h"
 #include <wx/wx.h>
 #include <ctime>
 #include <sstream>
@@ -46,10 +48,12 @@ wxMenu* NidaaTrayIcon::CreatePopupMenu() {
 
     auto* menu = new wxMenu;
     menu->Append(ID_SETTINGS, Lang::MenuSettings(lang));
+    menu->Append(ID_CHECK_UPDATE, Lang::MenuCheckUpdate(lang));
     menu->AppendSeparator();
     menu->Append(ID_EXIT, Lang::MenuExit(lang));
 
     menu->Bind(wxEVT_MENU, &NidaaTrayIcon::OnSettings, this, ID_SETTINGS);
+    menu->Bind(wxEVT_MENU, &NidaaTrayIcon::OnCheckUpdate, this, ID_CHECK_UPDATE);
     menu->Bind(wxEVT_MENU, &NidaaTrayIcon::OnExit, this, ID_EXIT);
     return menu;
 }
@@ -58,6 +62,23 @@ void NidaaTrayIcon::OnSettings(wxCommandEvent&) {
     if (m_settingsFrame) {
         m_settingsFrame->Show(true);
         m_settingsFrame->Raise();
+    }
+}
+
+void NidaaTrayIcon::OnCheckUpdate(wxCommandEvent&) {
+    AppConfig config;
+    ConfigLoad(config);
+    Language lang = static_cast<Language>(config.language);
+
+    std::wstring installerPath;
+    if (Updater::CheckForUpdate(installerPath)) {
+        SpeechSay(Lang::UpdateAvailable(lang));
+        ShellExecuteW(nullptr, L"open", installerPath.c_str(),
+                      L"/SILENT", nullptr, SW_SHOWNORMAL);
+        RemoveIcon();
+        wxTheApp->ExitMainLoop();
+    } else {
+        SpeechSay(Lang::NoUpdateAvailable(lang));
     }
 }
 
@@ -109,7 +130,9 @@ void NidaaTrayIcon::OnHotkeyPressed() {
 
     if (country) {
         timezone = country->timezoneHours;
-        calcMethod = country->calcMethod;
+        calcMethod = (config.calcMethod >= 0 && config.calcMethod < 8)
+            ? static_cast<CalcMethodId>(config.calcMethod)
+            : country->calcMethod;
 
         if (country->id == CitiesDatabase::SAUDI_COUNTRY_ID && config.saudiCityId > 0) {
             const CityInfo* city = db.FindSaudiCityById(config.saudiCityId);

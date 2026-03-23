@@ -2,6 +2,9 @@
 #include "TrayIcon.h"
 #include "Config.h"
 #include "Cities.h"
+#include "CalcMethod.h"
+#include "Updater.h"
+#include "Speech.h"
 #include <wx/sizer.h>
 #include <wx/msw/wrapwin.h>
 #include <algorithm>
@@ -10,7 +13,7 @@
 SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
     : wxFrame(nullptr, wxID_ANY,
               Lang::SettingsTitle(Language::AR),
-              wxDefaultPosition, wxSize(450, 500),
+              wxDefaultPosition, wxSize(450, 600),
               wxDEFAULT_FRAME_STYLE & ~(wxRESIZE_BORDER | wxMAXIMIZE_BOX))
     , m_tray(tray)
 {
@@ -63,6 +66,16 @@ SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
         mainSizer->Add(m_cityChoice, 0, wxEXPAND | wxALL, 5);
     }
 
+    // Calculation method
+    {
+        m_lblCalcMethod = new wxStaticText(panel, wxID_ANY, Lang::CalcMethodLabel(Language::AR));
+        mainSizer->Add(m_lblCalcMethod, 0, wxALL, 5);
+
+        m_calcMethodChoice = new wxChoice(panel, wxID_ANY);
+        m_calcMethodChoice->SetName(Lang::CalcMethodLabel(Language::AR));
+        mainSizer->Add(m_calcMethodChoice, 0, wxEXPAND | wxALL, 5);
+    }
+
     // Hotkey settings
     {
         m_lblHotkey = new wxStaticText(panel, wxID_ANY, Lang::HotkeyLabel(Language::AR));
@@ -93,8 +106,18 @@ SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
         m_saveBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnSave, this);
     }
 
+    // Check for updates button
+    {
+        m_updateBtn = new wxButton(panel, ID_CHECK_UPDATE, Lang::CheckUpdateButton(Language::AR));
+        mainSizer->Add(m_updateBtn, 0, wxALIGN_CENTER | wxALL, 5);
+        m_updateBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnCheckUpdate, this);
+    }
+
     panel->SetSizer(mainSizer);
     Bind(wxEVT_CLOSE_WINDOW, &SettingsFrame::OnClose, this);
+    // Allow system shutdown without blocking - don't veto QUERY_END_SESSION
+    Bind(wxEVT_QUERY_END_SESSION, [](wxCloseEvent& evt) { evt.Skip(); });
+    Bind(wxEVT_END_SESSION, [this](wxCloseEvent&) { Destroy(); });
 
     LoadCurrentSettings();
 }
@@ -193,24 +216,56 @@ void SettingsFrame::PopulateCities() {
     m_cityChoice->Thaw();
 }
 
+void SettingsFrame::PopulateCalcMethods() {
+    m_calcMethodChoice->Freeze();
+    m_calcMethodChoice->Clear();
+
+    // First item: Auto (based on country)
+    m_calcMethodChoice->Append(Lang::CalcMethodAuto(m_currentLang));
+
+    // Add all 8 calculation methods
+    for (int i = 0; i < 8; ++i) {
+        m_calcMethodChoice->Append(Lang::CalcMethodName(i, m_currentLang));
+    }
+
+    m_calcMethodChoice->SetSelection(0);
+    m_calcMethodChoice->Thaw();
+}
+
+void SettingsFrame::OnCheckUpdate(wxCommandEvent&) {
+    std::wstring installerPath;
+    if (Updater::CheckForUpdate(installerPath)) {
+        SpeechSay(Lang::UpdateAvailable(m_currentLang));
+        ShellExecuteW(nullptr, L"open", installerPath.c_str(),
+                      L"/SILENT", nullptr, SW_SHOWNORMAL);
+        wxTheApp->ExitMainLoop();
+    } else {
+        SpeechSay(Lang::NoUpdateAvailable(m_currentLang));
+    }
+}
+
 void SettingsFrame::RefreshUI() {
     SetTitle(Lang::SettingsTitle(m_currentLang));
     m_lblLang->SetLabel(Lang::LanguageLabel(m_currentLang));
     m_lblCountry->SetLabel(Lang::CountryLabel(m_currentLang));
     m_lblRegion->SetLabel(Lang::RegionLabel(m_currentLang));
     m_lblCity->SetLabel(Lang::CityLabel(m_currentLang));
+    m_lblCalcMethod->SetLabel(Lang::CalcMethodLabel(m_currentLang));
     m_lblHotkey->SetLabel(Lang::HotkeyLabel(m_currentLang));
     m_lblKey->SetLabel(Lang::KeyLabel(m_currentLang));
     m_saveBtn->SetLabel(Lang::SaveButton(m_currentLang));
+    m_updateBtn->SetLabel(Lang::CheckUpdateButton(m_currentLang));
     m_countryChoice->SetName(Lang::CountryLabel(m_currentLang));
     m_regionChoice->SetName(Lang::RegionLabel(m_currentLang));
     m_cityChoice->SetName(Lang::CityLabel(m_currentLang));
+    m_calcMethodChoice->SetName(Lang::CalcMethodLabel(m_currentLang));
     m_keyText->SetName(Lang::KeyLabel(m_currentLang));
 
     // Remember current selections
     int savedCountrySel = m_countryChoice->GetSelection();
     int savedRegionSel = m_regionChoice->GetSelection();
     int savedCitySel = m_cityChoice->GetSelection();
+    int savedCalcSel = m_calcMethodChoice->GetSelection();
 
     PopulateCountries();
 
@@ -226,6 +281,10 @@ void SettingsFrame::RefreshUI() {
 
     if (savedCitySel >= 0 && savedCitySel < static_cast<int>(m_cityChoice->GetCount()))
         m_cityChoice->SetSelection(savedCitySel);
+
+    PopulateCalcMethods();
+    if (savedCalcSel >= 0 && savedCalcSel < static_cast<int>(m_calcMethodChoice->GetCount()))
+        m_calcMethodChoice->SetSelection(savedCalcSel);
 
     // Set layout direction
     if (m_currentLang == Language::AR) {
@@ -314,6 +373,13 @@ void SettingsFrame::LoadCurrentSettings() {
         PopulateCities();
     }
 
+    // Calculation method: -1=Auto (index 0), 0-7=specific (index 1-8)
+    PopulateCalcMethods();
+    if (config.calcMethod >= 0 && config.calcMethod < 8)
+        m_calcMethodChoice->SetSelection(config.calcMethod + 1);
+    else
+        m_calcMethodChoice->SetSelection(0); // Auto
+
     // Hotkey
     m_chkCtrl->SetValue((config.hotkeyModifiers & MOD_CONTROL) != 0);
     m_chkAlt->SetValue((config.hotkeyModifiers & MOD_ALT) != 0);
@@ -356,6 +422,10 @@ void SettingsFrame::OnSave(wxCommandEvent&) {
             config.stateId = m_stateIds[regionSel];
         }
     }
+
+    // Calculation method: selection 0=Auto(-1), 1-8=method 0-7
+    int calcSel = m_calcMethodChoice->GetSelection();
+    config.calcMethod = (calcSel > 0) ? (calcSel - 1) : -1;
 
     // Hotkey
     int mod = 0;

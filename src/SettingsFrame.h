@@ -19,6 +19,8 @@ private:
     void PopulateCountries();
     void PopulateRegions();
     void PopulateCities();
+    void PopulateCalcMethods();
+    void OnCheckUpdate(wxCommandEvent& evt);
     void LoadCurrentSettings();
 
     bool IsSaudiSelected() const;
@@ -37,10 +39,13 @@ private:
     wxStaticText* m_lblCountry = nullptr;
     wxStaticText* m_lblRegion = nullptr;
     wxStaticText* m_lblCity = nullptr;
+    wxStaticText* m_lblCalcMethod = nullptr;
     wxStaticText* m_lblHotkey = nullptr;
     wxStaticText* m_lblKey = nullptr;
     wxStaticText* m_lblLang = nullptr;
+    wxChoice* m_calcMethodChoice = nullptr;
     wxButton* m_saveBtn = nullptr;
+    wxButton* m_updateBtn = nullptr;
 
     Language m_currentLang = Language::AR;
 
@@ -50,5 +55,5 @@ private:
     std::vector<int> m_saudiRegionIds; // parallel to region combo items (Saudi)
     std::vector<int> m_saudiCityIds;   // parallel to city combo items (Saudi)
 
-    enum { ID_SAVE = 20001, ID_LANG = 20002, ID_COUNTRY = 20003, ID_REGION = 20004 };
+    enum { ID_SAVE = 20001, ID_LANG = 20002, ID_COUNTRY = 20003, ID_REGION = 20004, ID_CHECK_UPDATE = 20005 };
 };

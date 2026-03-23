@@ -20,6 +20,8 @@ public:
         , m_tray(tray)
     {
         Show(false);
+        Bind(wxEVT_QUERY_END_SESSION, [](wxCloseEvent& evt) { evt.Skip(); });
+        Bind(wxEVT_END_SESSION, [this](wxCloseEvent&) { Destroy(); });
     }
 
 protected:
@@ -103,9 +105,11 @@ public:
             }
         }
 
-        // Always show settings when the app is launched
-        m_settingsFrame->Show(true);
-        m_settingsFrame->Raise();
+        // Only show settings on first launch or with --settings flag
+        if (firstLaunch || (argc > 1 && wxString(argv[1]) == "--settings")) {
+            m_settingsFrame->Show(true);
+            m_settingsFrame->Raise();
+        }
 
         return true;
     }
