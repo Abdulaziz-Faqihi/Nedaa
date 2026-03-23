@@ -449,7 +449,8 @@ void SettingsFrame::OnSave(wxCommandEvent&) {
     // Update tray tooltip
     m_tray->UpdateTooltip();
 
-    Hide();
+    // Defer hide until after event handling completes
+    CallAfter([this]() { Hide(); });
 }
 
 void SettingsFrame::OnClose(wxCloseEvent& evt) {
