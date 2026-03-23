@@ -8,6 +8,7 @@
 #include "DataManager.h"
 #include "Updater.h"
 #include "Lang.h"
+#include "Log.h"
 
 static const int HOTKEY_ID = 1;
 
@@ -60,6 +61,7 @@ public:
             return false;
         }
 
+        Log::Init();
         SpeechInit();
 
         auto& dm = DataManager::Instance();
@@ -72,17 +74,25 @@ public:
 
         // Download/cache data if needed
         if (!dm.IsWorldDataCached()) {
+            Log::Info(L"World data not cached, downloading...");
             SpeechSay(Lang::DownloadingData(lang));
             if (!dm.DownloadWorldData()) {
+                Log::Error(L"Failed to download world data");
                 SpeechSay(Lang::DownloadFailed(lang));
-                // Continue anyway - Saudi bundled data may still work
             }
         }
 
         // Load data
         auto& db = CitiesDatabase::Instance();
-        db.LoadWorldData(dm.GetCacheDir());
-        db.LoadSaudiData(dm.GetCacheDir());
+        if (!db.LoadWorldData(dm.GetCacheDir()))
+            Log::Error(L"Failed to load world data from: " + dm.GetCacheDir());
+        else
+            Log::Info(L"World data loaded: " + std::to_wstring(db.GetCountries().size()) + L" countries");
+
+        if (!db.LoadSaudiData(dm.GetCacheDir()))
+            Log::Error(L"Failed to load Saudi data from: " + dm.GetCacheDir());
+        else
+            Log::Info(L"Saudi data loaded: " + std::to_wstring(db.GetSaudiRegions().size()) + L" regions");
 
         m_trayIcon = new NidaaTrayIcon();
 

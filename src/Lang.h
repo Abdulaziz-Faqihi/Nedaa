@@ -48,4 +48,10 @@ namespace Lang {
     const wchar_t* CalcMethodLabel(Language lang);
     const wchar_t* CalcMethodName(int index, Language lang);
     const wchar_t* CalcMethodAuto(Language lang);
+
+    // Log sending
+    const wchar_t* SendLogButton(Language lang);
+    const wchar_t* SendingLog(Language lang);
+    const wchar_t* LogSentSuccess(Language lang);
+    const wchar_t* LogSentFailed(Language lang);
 }

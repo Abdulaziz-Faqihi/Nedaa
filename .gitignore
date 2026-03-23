@@ -1,0 +1,9 @@
+build/
+installer_output/
+.vs/
+.claude/
+src/secrets.h
+*.obj
+*.exe
+*.pdb
+*.ilk

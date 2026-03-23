@@ -217,4 +217,28 @@ const wchar_t* CalcMethodName(int index, Language lang) {
     }
 }
 
+const wchar_t* SendLogButton(Language lang) {
+    return lang == Language::AR
+        ? L"\x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A \x0644\x0644\x062F\x0639\x0645" // إرسال السجلات للدعم
+        : L"Send logs to support";
+}
+
+const wchar_t* SendingLog(Language lang) {
+    return lang == Language::AR
+        ? L"\x062C\x0627\x0631\x064A \x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A" // جاري إرسال السجلات
+        : L"Sending logs...";
+}
+
+const wchar_t* LogSentSuccess(Language lang) {
+    return lang == Language::AR
+        ? L"\x062A\x0645 \x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A \x0628\x0646\x062C\x0627\x062D" // تم إرسال السجلات بنجاح
+        : L"Logs sent successfully";
+}
+
+const wchar_t* LogSentFailed(Language lang) {
+    return lang == Language::AR
+        ? L"\x0641\x0634\x0644 \x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A. \x0623\x0631\x0633\x0644 /start \x0644\x0644\x0628\x0648\x062A \x0623\x0648\x0644\x0627\x064B" // فشل إرسال السجلات. أرسل /start للبوت أولاً
+        : L"Failed to send logs. Send /start to the bot first.";
+}
+
 } // namespace Lang

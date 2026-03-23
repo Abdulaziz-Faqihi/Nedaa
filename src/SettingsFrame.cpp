@@ -5,6 +5,8 @@
 #include "CalcMethod.h"
 #include "Updater.h"
 #include "Speech.h"
+#include "Log.h"
+#include "LogSender.h"
 #include <wx/sizer.h>
 #include <wx/msw/wrapwin.h>
 #include <algorithm>
@@ -113,6 +115,13 @@ SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
         m_updateBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnCheckUpdate, this);
     }
 
+    // Send logs button
+    {
+        m_sendLogBtn = new wxButton(panel, ID_SEND_LOG, Lang::SendLogButton(Language::AR));
+        mainSizer->Add(m_sendLogBtn, 0, wxALIGN_CENTER | wxALL, 5);
+        m_sendLogBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnSendLog, this);
+    }
+
     panel->SetSizer(mainSizer);
     Bind(wxEVT_CLOSE_WINDOW, &SettingsFrame::OnClose, this);
 
@@ -182,6 +191,9 @@ void SettingsFrame::PopulateRegions() {
     if (m_regionChoice->GetCount() > 0)
         m_regionChoice->SetSelection(0);
 
+    Log::Info(L"PopulateRegions: " + std::to_wstring(m_regionChoice->GetCount()) + L" regions loaded"
+              + (IsSaudiSelected() ? L" (Saudi)" : L" (countryId=" + std::to_wstring(GetSelectedCountryId()) + L")"));
+
     m_regionChoice->Thaw();
 }
 
@@ -209,6 +221,8 @@ void SettingsFrame::PopulateCities() {
     } else {
         m_cityChoice->Enable(false);
     }
+
+    Log::Info(L"PopulateCities: " + std::to_wstring(m_cityChoice->GetCount()) + L" cities loaded");
 
     m_cityChoice->Thaw();
 }
@@ -241,6 +255,15 @@ void SettingsFrame::OnCheckUpdate(wxCommandEvent&) {
     }
 }
 
+void SettingsFrame::OnSendLog(wxCommandEvent&) {
+    SpeechSay(Lang::SendingLog(m_currentLang));
+    if (LogSender::SendLogToTelegram()) {
+        SpeechSay(Lang::LogSentSuccess(m_currentLang));
+    } else {
+        SpeechSay(Lang::LogSentFailed(m_currentLang));
+    }
+}
+
 void SettingsFrame::RefreshUI() {
     SetTitle(Lang::SettingsTitle(m_currentLang));
     m_lblLang->SetLabel(Lang::LanguageLabel(m_currentLang));
@@ -252,6 +275,7 @@ void SettingsFrame::RefreshUI() {
     m_lblKey->SetLabel(Lang::KeyLabel(m_currentLang));
     m_saveBtn->SetLabel(Lang::SaveButton(m_currentLang));
     m_updateBtn->SetLabel(Lang::CheckUpdateButton(m_currentLang));
+    m_sendLogBtn->SetLabel(Lang::SendLogButton(m_currentLang));
     m_countryChoice->SetName(Lang::CountryLabel(m_currentLang));
     m_regionChoice->SetName(Lang::RegionLabel(m_currentLang));
     m_cityChoice->SetName(Lang::CityLabel(m_currentLang));
@@ -437,6 +461,10 @@ void SettingsFrame::OnSave(wxCommandEvent&) {
     }
 
     ConfigSave(config);
+    Log::Info(L"Settings saved: country=" + std::wstring(config.countryIso2.begin(), config.countryIso2.end())
+              + L" stateId=" + std::to_wstring(config.stateId)
+              + L" saudiCityId=" + std::to_wstring(config.saudiCityId)
+              + L" calcMethod=" + std::to_wstring(config.calcMethod));
 
     // Re-register hotkey
     HWND hwnd = static_cast<HWND>(wxTheApp->GetTopWindow()->GetHandle());
@@ -446,8 +474,8 @@ void SettingsFrame::OnSave(wxCommandEvent&) {
     // Update tray tooltip
     m_tray->UpdateTooltip();
 
-    // Defer hide until after event handling completes
-    CallAfter([this]() { Hide(); });
+    // Use Win32 API directly to hide - CallAfter doesn't always work
+    ShowWindow(static_cast<HWND>(GetHandle()), SW_HIDE);
 }
 
 WXLRESULT SettingsFrame::MSWWindowProc(WXUINT msg, WXWPARAM wParam, WXLPARAM lParam) {

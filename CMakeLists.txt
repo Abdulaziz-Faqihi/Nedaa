@@ -24,6 +24,8 @@ add_executable(Nidaa WIN32
     src/CalcMethod.cpp
     src/DataManager.cpp
     src/Updater.cpp
+    src/Log.cpp
+    src/LogSender.cpp
 )
 
 target_include_directories(Nidaa PRIVATE src)
