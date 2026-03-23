@@ -1,1752 +1,1752 @@
-﻿[
+[
     {
-        "id":  1,
-        "iso2":  "AF",
-        "name_en":  "Afghanistan",
-        "name_ar":  "Ø£ÙØºØ§Ù†Ø³ØªØ§Ù†",
-        "gmt_offset":  16200
+        "id": 1,
+        "iso2": "AF",
+        "name_en": "Afghanistan",
+        "name_ar": "أفغانستان",
+        "gmt_offset": 16200
     },
     {
-        "id":  2,
-        "iso2":  "AX",
-        "name_en":  "Aland Islands",
-        "name_ar":  "Ø¬Ø²Ø± Ø¢Ù„Ø§Ù†Ø¯",
-        "gmt_offset":  7200
+        "id": 2,
+        "iso2": "AX",
+        "name_en": "Aland Islands",
+        "name_ar": "جزر آلاند",
+        "gmt_offset": 7200
     },
     {
-        "id":  3,
-        "iso2":  "AL",
-        "name_en":  "Albania",
-        "name_ar":  "Ø£Ù„Ø¨Ø§Ù†ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 3,
+        "iso2": "AL",
+        "name_en": "Albania",
+        "name_ar": "ألبانيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  4,
-        "iso2":  "DZ",
-        "name_en":  "Algeria",
-        "name_ar":  "Ø§Ù„Ø¬Ø²Ø§Ø¦Ø±",
-        "gmt_offset":  3600
+        "id": 4,
+        "iso2": "DZ",
+        "name_en": "Algeria",
+        "name_ar": "الجزائر",
+        "gmt_offset": 3600
     },
     {
-        "id":  5,
-        "iso2":  "AS",
-        "name_en":  "American Samoa",
-        "name_ar":  "Ø³Ø§Ù…ÙˆØ§ Ø§Ù„Ø£Ù…Ø±ÙŠÙƒÙŠØ©",
-        "gmt_offset":  -39600
+        "id": 5,
+        "iso2": "AS",
+        "name_en": "American Samoa",
+        "name_ar": "ساموا الأمريكية",
+        "gmt_offset": -39600
     },
     {
-        "id":  6,
-        "iso2":  "AD",
-        "name_en":  "Andorra",
-        "name_ar":  "Ø£Ù†Ø¯ÙˆØ±Ø§",
-        "gmt_offset":  3600
+        "id": 6,
+        "iso2": "AD",
+        "name_en": "Andorra",
+        "name_ar": "أندورا",
+        "gmt_offset": 3600
     },
     {
-        "id":  7,
-        "iso2":  "AO",
-        "name_en":  "Angola",
-        "name_ar":  "Ø£Ù†ØºÙˆÙ„Ø§",
-        "gmt_offset":  3600
+        "id": 7,
+        "iso2": "AO",
+        "name_en": "Angola",
+        "name_ar": "أنغولا",
+        "gmt_offset": 3600
     },
     {
-        "id":  8,
-        "iso2":  "AI",
-        "name_en":  "Anguilla",
-        "name_ar":  "Ø£Ù†ØºÙŠÙ„Ø§",
-        "gmt_offset":  -14400
+        "id": 8,
+        "iso2": "AI",
+        "name_en": "Anguilla",
+        "name_ar": "أنغيلا",
+        "gmt_offset": -14400
     },
     {
-        "id":  9,
-        "iso2":  "AQ",
-        "name_en":  "Antarctica",
-        "name_ar":  "Ø£Ù†ØªØ§Ø±ÙƒØªÙŠÙƒØ§",
-        "gmt_offset":  39600
+        "id": 9,
+        "iso2": "AQ",
+        "name_en": "Antarctica",
+        "name_ar": "أنتاركتيكا",
+        "gmt_offset": 39600
     },
     {
-        "id":  10,
-        "iso2":  "AG",
-        "name_en":  "Antigua and Barbuda",
-        "name_ar":  "Ø£Ù†ØªÙŠØºÙˆØ§ ÙˆØ¨Ø±Ø¨ÙˆØ¯Ø§",
-        "gmt_offset":  -14400
+        "id": 10,
+        "iso2": "AG",
+        "name_en": "Antigua and Barbuda",
+        "name_ar": "أنتيغوا وبربودا",
+        "gmt_offset": -14400
     },
     {
-        "id":  11,
-        "iso2":  "AR",
-        "name_en":  "Argentina",
-        "name_ar":  "Ø§Ù„Ø£Ø±Ø¬Ù†ØªÙŠÙ†",
-        "gmt_offset":  -10800
+        "id": 11,
+        "iso2": "AR",
+        "name_en": "Argentina",
+        "name_ar": "الأرجنتين",
+        "gmt_offset": -10800
     },
     {
-        "id":  12,
-        "iso2":  "AM",
-        "name_en":  "Armenia",
-        "name_ar":  "Ø£Ø±Ù…ÙŠÙ†ÙŠØ§",
-        "gmt_offset":  14400
+        "id": 12,
+        "iso2": "AM",
+        "name_en": "Armenia",
+        "name_ar": "أرمينيا",
+        "gmt_offset": 14400
     },
     {
-        "id":  13,
-        "iso2":  "AW",
-        "name_en":  "Aruba",
-        "name_ar":  "Ø£Ø±ÙˆØ¨Ø§",
-        "gmt_offset":  -14400
+        "id": 13,
+        "iso2": "AW",
+        "name_en": "Aruba",
+        "name_ar": "أروبا",
+        "gmt_offset": -14400
     },
     {
-        "id":  14,
-        "iso2":  "AU",
-        "name_en":  "Australia",
-        "name_ar":  "Ø£Ø³ØªØ±Ø§Ù„ÙŠØ§",
-        "gmt_offset":  39600
+        "id": 14,
+        "iso2": "AU",
+        "name_en": "Australia",
+        "name_ar": "أستراليا",
+        "gmt_offset": 39600
     },
     {
-        "id":  15,
-        "iso2":  "AT",
-        "name_en":  "Austria",
-        "name_ar":  "Ø§Ù„Ù†Ù…Ø³Ø§",
-        "gmt_offset":  3600
+        "id": 15,
+        "iso2": "AT",
+        "name_en": "Austria",
+        "name_ar": "النمسا",
+        "gmt_offset": 3600
     },
     {
-        "id":  16,
-        "iso2":  "AZ",
-        "name_en":  "Azerbaijan",
-        "name_ar":  "Ø£Ø°Ø±Ø¨ÙŠØ¬Ø§Ù†",
-        "gmt_offset":  14400
+        "id": 16,
+        "iso2": "AZ",
+        "name_en": "Azerbaijan",
+        "name_ar": "أذربيجان",
+        "gmt_offset": 14400
     },
     {
-        "id":  18,
-        "iso2":  "BH",
-        "name_en":  "Bahrain",
-        "name_ar":  "Ø§Ù„Ø¨Ø­Ø±ÙŠÙ†",
-        "gmt_offset":  10800
+        "id": 18,
+        "iso2": "BH",
+        "name_en": "Bahrain",
+        "name_ar": "البحرين",
+        "gmt_offset": 10800
     },
     {
-        "id":  19,
-        "iso2":  "BD",
-        "name_en":  "Bangladesh",
-        "name_ar":  "Ø¨Ù†ØºÙ„Ø§Ø¯ÙŠØ´",
-        "gmt_offset":  21600
+        "id": 19,
+        "iso2": "BD",
+        "name_en": "Bangladesh",
+        "name_ar": "بنغلاديش",
+        "gmt_offset": 21600
     },
     {
-        "id":  20,
-        "iso2":  "BB",
-        "name_en":  "Barbados",
-        "name_ar":  "Ø¨Ø±Ø¨Ø§Ø¯ÙˆØ³",
-        "gmt_offset":  -14400
+        "id": 20,
+        "iso2": "BB",
+        "name_en": "Barbados",
+        "name_ar": "بربادوس",
+        "gmt_offset": -14400
     },
     {
-        "id":  21,
-        "iso2":  "BY",
-        "name_en":  "Belarus",
-        "name_ar":  "Ø¨ÙŠÙ„Ø§Ø±ÙˆØ³ÙŠØ§",
-        "gmt_offset":  10800
+        "id": 21,
+        "iso2": "BY",
+        "name_en": "Belarus",
+        "name_ar": "بيلاروسيا",
+        "gmt_offset": 10800
     },
     {
-        "id":  22,
-        "iso2":  "BE",
-        "name_en":  "Belgium",
-        "name_ar":  "Ø¨Ù„Ø¬ÙŠÙƒØ§",
-        "gmt_offset":  3600
+        "id": 22,
+        "iso2": "BE",
+        "name_en": "Belgium",
+        "name_ar": "بلجيكا",
+        "gmt_offset": 3600
     },
     {
-        "id":  23,
-        "iso2":  "BZ",
-        "name_en":  "Belize",
-        "name_ar":  "Ø¨Ù„ÙŠØ²",
-        "gmt_offset":  -21600
+        "id": 23,
+        "iso2": "BZ",
+        "name_en": "Belize",
+        "name_ar": "بليز",
+        "gmt_offset": -21600
     },
     {
-        "id":  24,
-        "iso2":  "BJ",
-        "name_en":  "Benin",
-        "name_ar":  "Ø¨Ù†ÙŠÙ†",
-        "gmt_offset":  3600
+        "id": 24,
+        "iso2": "BJ",
+        "name_en": "Benin",
+        "name_ar": "بنين",
+        "gmt_offset": 3600
     },
     {
-        "id":  25,
-        "iso2":  "BM",
-        "name_en":  "Bermuda",
-        "name_ar":  "Ø¨Ø±Ù…ÙˆØ¯Ø§",
-        "gmt_offset":  -14400
+        "id": 25,
+        "iso2": "BM",
+        "name_en": "Bermuda",
+        "name_ar": "برمودا",
+        "gmt_offset": -14400
     },
     {
-        "id":  26,
-        "iso2":  "BT",
-        "name_en":  "Bhutan",
-        "name_ar":  "Ø¨ÙˆØªØ§Ù†",
-        "gmt_offset":  21600
+        "id": 26,
+        "iso2": "BT",
+        "name_en": "Bhutan",
+        "name_ar": "بوتان",
+        "gmt_offset": 21600
     },
     {
-        "id":  27,
-        "iso2":  "BO",
-        "name_en":  "Bolivia",
-        "name_ar":  "Ø¨ÙˆÙ„ÙŠÙÙŠØ§",
-        "gmt_offset":  -14400
+        "id": 27,
+        "iso2": "BO",
+        "name_en": "Bolivia",
+        "name_ar": "بوليفيا",
+        "gmt_offset": -14400
     },
     {
-        "id":  155,
-        "iso2":  "BQ",
-        "name_en":  "Bonaire, Sint Eustatius and Saba",
-        "name_ar":  "Ø¨ÙˆÙ†ÙŠØ±ØŒ Ø³ÙŠÙ†Øª Ø£ÙˆØ³ØªØ§ØªÙŠÙˆØ³ ÙˆØ³Ø§Ø¨Ø§",
-        "gmt_offset":  -14400
+        "id": 155,
+        "iso2": "BQ",
+        "name_en": "Bonaire, Sint Eustatius and Saba",
+        "name_ar": "بونير، سينت أوستاتيوس وسابا",
+        "gmt_offset": -14400
     },
     {
-        "id":  28,
-        "iso2":  "BA",
-        "name_en":  "Bosnia and Herzegovina",
-        "name_ar":  "Ø§Ù„Ø¨ÙˆØ³Ù†Ø© ÙˆØ§Ù„Ù‡Ø±Ø³Ùƒ",
-        "gmt_offset":  3600
+        "id": 28,
+        "iso2": "BA",
+        "name_en": "Bosnia and Herzegovina",
+        "name_ar": "البوسنة والهرسك",
+        "gmt_offset": 3600
     },
     {
-        "id":  29,
-        "iso2":  "BW",
-        "name_en":  "Botswana",
-        "name_ar":  "Ø¨ÙˆØªØ³ÙˆØ§Ù†Ø§",
-        "gmt_offset":  7200
+        "id": 29,
+        "iso2": "BW",
+        "name_en": "Botswana",
+        "name_ar": "بوتسوانا",
+        "gmt_offset": 7200
     },
     {
-        "id":  30,
-        "iso2":  "BV",
-        "name_en":  "Bouvet Island",
-        "name_ar":  "Ø¬Ø²ÙŠØ±Ø© Ø¨ÙˆÙÙŠØª",
-        "gmt_offset":  3600
+        "id": 30,
+        "iso2": "BV",
+        "name_en": "Bouvet Island",
+        "name_ar": "جزيرة بوفيت",
+        "gmt_offset": 3600
     },
     {
-        "id":  31,
-        "iso2":  "BR",
-        "name_en":  "Brazil",
-        "name_ar":  "Ø§Ù„Ø¨Ø±Ø§Ø²ÙŠÙ„",
-        "gmt_offset":  -10800
+        "id": 31,
+        "iso2": "BR",
+        "name_en": "Brazil",
+        "name_ar": "البرازيل",
+        "gmt_offset": -10800
     },
     {
-        "id":  32,
-        "iso2":  "IO",
-        "name_en":  "British Indian Ocean Territory",
-        "name_ar":  "Ø£Ø±Ø§Ø¶ÙŠ Ø§Ù„Ù…Ø­ÙŠØ· Ø§Ù„Ù‡Ù†Ø¯ÙŠ Ø§Ù„Ø¨Ø±ÙŠØ·Ø§Ù†ÙŠ",
-        "gmt_offset":  21600
+        "id": 32,
+        "iso2": "IO",
+        "name_en": "British Indian Ocean Territory",
+        "name_ar": "أراضي المحيط الهندي البريطاني",
+        "gmt_offset": 21600
     },
     {
-        "id":  33,
-        "iso2":  "BN",
-        "name_en":  "Brunei",
-        "name_ar":  "Ø¨Ø±ÙˆÙ†Ø§ÙŠ",
-        "gmt_offset":  28800
+        "id": 33,
+        "iso2": "BN",
+        "name_en": "Brunei",
+        "name_ar": "بروناي",
+        "gmt_offset": 28800
     },
     {
-        "id":  34,
-        "iso2":  "BG",
-        "name_en":  "Bulgaria",
-        "name_ar":  "Ø¨Ù„ØºØ§Ø±ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 34,
+        "iso2": "BG",
+        "name_en": "Bulgaria",
+        "name_ar": "بلغاريا",
+        "gmt_offset": 7200
     },
     {
-        "id":  35,
-        "iso2":  "BF",
-        "name_en":  "Burkina Faso",
-        "name_ar":  "Ø¨ÙˆØ±ÙƒÙŠÙ†Ø§ ÙØ§Ø³Ùˆ",
-        "gmt_offset":  0
+        "id": 35,
+        "iso2": "BF",
+        "name_en": "Burkina Faso",
+        "name_ar": "بوركينا فاسو",
+        "gmt_offset": 0
     },
     {
-        "id":  36,
-        "iso2":  "BI",
-        "name_en":  "Burundi",
-        "name_ar":  "Ø¨ÙˆØ±ÙˆÙ†Ø¯ÙŠ",
-        "gmt_offset":  7200
+        "id": 36,
+        "iso2": "BI",
+        "name_en": "Burundi",
+        "name_ar": "بوروندي",
+        "gmt_offset": 7200
     },
     {
-        "id":  37,
-        "iso2":  "KH",
-        "name_en":  "Cambodia",
-        "name_ar":  "ÙƒÙ…Ø¨ÙˆØ¯ÙŠØ§",
-        "gmt_offset":  25200
+        "id": 37,
+        "iso2": "KH",
+        "name_en": "Cambodia",
+        "name_ar": "كمبوديا",
+        "gmt_offset": 25200
     },
     {
-        "id":  38,
-        "iso2":  "CM",
-        "name_en":  "Cameroon",
-        "name_ar":  " ",
-        "gmt_offset":  3600
+        "id": 38,
+        "iso2": "CM",
+        "name_en": "Cameroon",
+        "name_ar": " ",
+        "gmt_offset": 3600
     },
     {
-        "id":  39,
-        "iso2":  "CA",
-        "name_en":  "Canada",
-        "name_ar":  "ÙƒÙ†Ø¯Ø§",
-        "gmt_offset":  -18000
+        "id": 39,
+        "iso2": "CA",
+        "name_en": "Canada",
+        "name_ar": "كندا",
+        "gmt_offset": -18000
     },
     {
-        "id":  40,
-        "iso2":  "CV",
-        "name_en":  "Cape Verde",
-        "name_ar":  "Ø§Ù„Ø±Ø£Ø³ Ø§Ù„Ø£Ø®Ø¶Ø±",
-        "gmt_offset":  -3600
+        "id": 40,
+        "iso2": "CV",
+        "name_en": "Cape Verde",
+        "name_ar": "الرأس الأخضر",
+        "gmt_offset": -3600
     },
     {
-        "id":  41,
-        "iso2":  "KY",
-        "name_en":  "Cayman Islands",
-        "name_ar":  "Ø¬Ø²Ø± ÙƒØ§ÙŠÙ…Ø§Ù†",
-        "gmt_offset":  -18000
+        "id": 41,
+        "iso2": "KY",
+        "name_en": "Cayman Islands",
+        "name_ar": "جزر كايمان",
+        "gmt_offset": -18000
     },
     {
-        "id":  42,
-        "iso2":  "CF",
-        "name_en":  "Central African Republic",
-        "name_ar":  "Ø¬Ù…Ù‡ÙˆØ±ÙŠØ© Ø£ÙØ±ÙŠÙ‚ÙŠØ§ Ø§Ù„ÙˆØ³Ø·Ù‰",
-        "gmt_offset":  3600
+        "id": 42,
+        "iso2": "CF",
+        "name_en": "Central African Republic",
+        "name_ar": "جمهورية أفريقيا الوسطى",
+        "gmt_offset": 3600
     },
     {
-        "id":  43,
-        "iso2":  "TD",
-        "name_en":  "Chad",
-        "name_ar":  "ØªØ´Ø§Ø¯",
-        "gmt_offset":  3600
+        "id": 43,
+        "iso2": "TD",
+        "name_en": "Chad",
+        "name_ar": "تشاد",
+        "gmt_offset": 3600
     },
     {
-        "id":  44,
-        "iso2":  "CL",
-        "name_en":  "Chile",
-        "name_ar":  "ØªØ´ÙŠÙ„ÙŠ",
-        "gmt_offset":  -10800
+        "id": 44,
+        "iso2": "CL",
+        "name_en": "Chile",
+        "name_ar": "تشيلي",
+        "gmt_offset": -10800
     },
     {
-        "id":  45,
-        "iso2":  "CN",
-        "name_en":  "China",
-        "name_ar":  "Ø§Ù„ØµÙŠÙ†",
-        "gmt_offset":  28800
+        "id": 45,
+        "iso2": "CN",
+        "name_en": "China",
+        "name_ar": "الصين",
+        "gmt_offset": 28800
     },
     {
-        "id":  46,
-        "iso2":  "CX",
-        "name_en":  "Christmas Island",
-        "name_ar":  "Ø¬Ø²ÙŠØ±Ø© Ø¹ÙŠØ¯ Ø§Ù„Ù…ÙŠÙ„Ø§Ø¯",
-        "gmt_offset":  25200
+        "id": 46,
+        "iso2": "CX",
+        "name_en": "Christmas Island",
+        "name_ar": "جزيرة عيد الميلاد",
+        "gmt_offset": 25200
     },
     {
-        "id":  47,
-        "iso2":  "CC",
-        "name_en":  "Cocos (Keeling) Islands",
-        "name_ar":  "Ø¬Ø²Ø± ÙƒÙˆÙƒÙˆØ³ (ÙƒÙŠÙ„ÙŠÙ†Øº)",
-        "gmt_offset":  23400
+        "id": 47,
+        "iso2": "CC",
+        "name_en": "Cocos (Keeling) Islands",
+        "name_ar": "جزر كوكوس (كيلينغ)",
+        "gmt_offset": 23400
     },
     {
-        "id":  48,
-        "iso2":  "CO",
-        "name_en":  "Colombia",
-        "name_ar":  "ÙƒÙˆÙ„ÙˆÙ…Ø¨ÙŠØ§",
-        "gmt_offset":  -18000
+        "id": 48,
+        "iso2": "CO",
+        "name_en": "Colombia",
+        "name_ar": "كولومبيا",
+        "gmt_offset": -18000
     },
     {
-        "id":  49,
-        "iso2":  "KM",
-        "name_en":  "Comoros",
-        "name_ar":  "Ø¬Ø²Ø± Ø§Ù„Ù‚Ù…Ø±",
-        "gmt_offset":  10800
+        "id": 49,
+        "iso2": "KM",
+        "name_en": "Comoros",
+        "name_ar": "جزر القمر",
+        "gmt_offset": 10800
     },
     {
-        "id":  50,
-        "iso2":  "CG",
-        "name_en":  "Congo",
-        "name_ar":  "Ø§Ù„ÙƒÙˆÙ†ØºÙˆ",
-        "gmt_offset":  3600
+        "id": 50,
+        "iso2": "CG",
+        "name_en": "Congo",
+        "name_ar": "الكونغو",
+        "gmt_offset": 3600
     },
     {
-        "id":  52,
-        "iso2":  "CK",
-        "name_en":  "Cook Islands",
-        "name_ar":  "ÙƒÙˆÙƒ Ø¬Ø²Ø±",
-        "gmt_offset":  -36000
+        "id": 52,
+        "iso2": "CK",
+        "name_en": "Cook Islands",
+        "name_ar": "كوك جزر",
+        "gmt_offset": -36000
     },
     {
-        "id":  53,
-        "iso2":  "CR",
-        "name_en":  "Costa Rica",
-        "name_ar":  "ÙƒÙˆØ³ØªØ§Ø±ÙŠÙƒØ§",
-        "gmt_offset":  -21600
+        "id": 53,
+        "iso2": "CR",
+        "name_en": "Costa Rica",
+        "name_ar": "كوستاريكا",
+        "gmt_offset": -21600
     },
     {
-        "id":  55,
-        "iso2":  "HR",
-        "name_en":  "Croatia",
-        "name_ar":  "ÙƒØ±ÙˆØ§ØªÙŠØ§",
-        "gmt_offset":  3600
+        "id": 55,
+        "iso2": "HR",
+        "name_en": "Croatia",
+        "name_ar": "كرواتيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  56,
-        "iso2":  "CU",
-        "name_en":  "Cuba",
-        "name_ar":  "ÙƒÙˆØ¨Ø§",
-        "gmt_offset":  -18000
+        "id": 56,
+        "iso2": "CU",
+        "name_en": "Cuba",
+        "name_ar": "كوبا",
+        "gmt_offset": -18000
     },
     {
-        "id":  249,
-        "iso2":  "CW",
-        "name_en":  "CuraÃ§ao",
-        "name_ar":  "ÙƒÙˆØ±Ø§Ø³Ø§Ùˆ",
-        "gmt_offset":  -14400
+        "id": 249,
+        "iso2": "CW",
+        "name_en": "CuraÃ§ao",
+        "name_ar": "كوراساو",
+        "gmt_offset": -14400
     },
     {
-        "id":  57,
-        "iso2":  "CY",
-        "name_en":  "Cyprus",
-        "name_ar":  "Ù‚Ø¨Ø±Øµ",
-        "gmt_offset":  7200
+        "id": 57,
+        "iso2": "CY",
+        "name_en": "Cyprus",
+        "name_ar": "قبرص",
+        "gmt_offset": 7200
     },
     {
-        "id":  58,
-        "iso2":  "CZ",
-        "name_en":  "Czech Republic",
-        "name_ar":  "Ø§Ù„Ø¬Ù…Ù‡ÙˆØ±ÙŠØ© Ø§Ù„ØªØ´ÙŠÙƒÙŠØ©",
-        "gmt_offset":  3600
+        "id": 58,
+        "iso2": "CZ",
+        "name_en": "Czech Republic",
+        "name_ar": "الجمهورية التشيكية",
+        "gmt_offset": 3600
     },
     {
-        "id":  51,
-        "iso2":  "CD",
-        "name_en":  "Democratic Republic of the Congo",
-        "name_ar":  "Ø¬Ù…Ù‡ÙˆØ±ÙŠØ© Ø§Ù„ÙƒÙˆÙ†ØºÙˆ Ø§Ù„Ø¯ÙŠÙ…Ù‚Ø±Ø§Ø·ÙŠØ©",
-        "gmt_offset":  3600
+        "id": 51,
+        "iso2": "CD",
+        "name_en": "Democratic Republic of the Congo",
+        "name_ar": "جمهورية الكونغو الديمقراطية",
+        "gmt_offset": 3600
     },
     {
-        "id":  59,
-        "iso2":  "DK",
-        "name_en":  "Denmark",
-        "name_ar":  "Ø§Ù„Ø¯Ù†Ù…Ø§Ø±Ùƒ",
-        "gmt_offset":  3600
+        "id": 59,
+        "iso2": "DK",
+        "name_en": "Denmark",
+        "name_ar": "الدنمارك",
+        "gmt_offset": 3600
     },
     {
-        "id":  60,
-        "iso2":  "DJ",
-        "name_en":  "Djibouti",
-        "name_ar":  "Ø¬ÙŠØ¨ÙˆØªÙŠ",
-        "gmt_offset":  10800
+        "id": 60,
+        "iso2": "DJ",
+        "name_en": "Djibouti",
+        "name_ar": "جيبوتي",
+        "gmt_offset": 10800
     },
     {
-        "id":  61,
-        "iso2":  "DM",
-        "name_en":  "Dominica",
-        "name_ar":  "Ø¯ÙˆÙ…ÙŠÙ†ÙŠÙƒØ§",
-        "gmt_offset":  -14400
+        "id": 61,
+        "iso2": "DM",
+        "name_en": "Dominica",
+        "name_ar": "دومينيكا",
+        "gmt_offset": -14400
     },
     {
-        "id":  62,
-        "iso2":  "DO",
-        "name_en":  "Dominican Republic",
-        "name_ar":  "Ø¬Ù…Ù‡ÙˆØ±ÙŠØ© Ø§Ù„Ø¯ÙˆÙ…ÙŠÙ†ÙŠÙƒØ§Ù†",
-        "gmt_offset":  -14400
+        "id": 62,
+        "iso2": "DO",
+        "name_en": "Dominican Republic",
+        "name_ar": "جمهورية الدومينيكان",
+        "gmt_offset": -14400
     },
     {
-        "id":  64,
-        "iso2":  "EC",
-        "name_en":  "Ecuador",
-        "name_ar":  "Ø§Ù„Ø§ÙƒÙˆØ§Ø¯ÙˆØ±",
-        "gmt_offset":  -18000
+        "id": 64,
+        "iso2": "EC",
+        "name_en": "Ecuador",
+        "name_ar": "الاكوادور",
+        "gmt_offset": -18000
     },
     {
-        "id":  65,
-        "iso2":  "EG",
-        "name_en":  "Egypt",
-        "name_ar":  "Ù…ØµØ±",
-        "gmt_offset":  7200
+        "id": 65,
+        "iso2": "EG",
+        "name_en": "Egypt",
+        "name_ar": "مصر",
+        "gmt_offset": 7200
     },
     {
-        "id":  66,
-        "iso2":  "SV",
-        "name_en":  "El Salvador",
-        "name_ar":  "Ø§Ù„Ø³Ù„ÙØ§Ø¯ÙˆØ±",
-        "gmt_offset":  -21600
+        "id": 66,
+        "iso2": "SV",
+        "name_en": "El Salvador",
+        "name_ar": "السلفادور",
+        "gmt_offset": -21600
     },
     {
-        "id":  67,
-        "iso2":  "GQ",
-        "name_en":  "Equatorial Guinea",
-        "name_ar":  "ØºÙŠÙ†ÙŠØ§ Ø§Ù„Ø§Ø³ØªÙˆØ§Ø¦ÙŠØ©",
-        "gmt_offset":  3600
+        "id": 67,
+        "iso2": "GQ",
+        "name_en": "Equatorial Guinea",
+        "name_ar": "غينيا الاستوائية",
+        "gmt_offset": 3600
     },
     {
-        "id":  68,
-        "iso2":  "ER",
-        "name_en":  "Eritrea",
-        "name_ar":  "Ø¥Ø±ÙŠØªØ±ÙŠØ§",
-        "gmt_offset":  10800
+        "id": 68,
+        "iso2": "ER",
+        "name_en": "Eritrea",
+        "name_ar": "إريتريا",
+        "gmt_offset": 10800
     },
     {
-        "id":  69,
-        "iso2":  "EE",
-        "name_en":  "Estonia",
-        "name_ar":  "Ø¥Ø³ØªÙˆÙ†ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 69,
+        "iso2": "EE",
+        "name_en": "Estonia",
+        "name_ar": "إستونيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  212,
-        "iso2":  "SZ",
-        "name_en":  "Eswatini",
-        "name_ar":  "Ø§Ù„Ø¥Ø³ÙˆØ§ØªÙŠÙ†",
-        "gmt_offset":  7200
+        "id": 212,
+        "iso2": "SZ",
+        "name_en": "Eswatini",
+        "name_ar": "الإسواتين",
+        "gmt_offset": 7200
     },
     {
-        "id":  70,
-        "iso2":  "ET",
-        "name_en":  "Ethiopia",
-        "name_ar":  "Ø£Ø«ÙŠÙˆØ¨ÙŠØ§",
-        "gmt_offset":  10800
+        "id": 70,
+        "iso2": "ET",
+        "name_en": "Ethiopia",
+        "name_ar": "أثيوبيا",
+        "gmt_offset": 10800
     },
     {
-        "id":  71,
-        "iso2":  "FK",
-        "name_en":  "Falkland Islands",
-        "name_ar":  "Ø¬Ø²Ø± ÙÙˆÙƒÙ„Ø§Ù†Ø¯",
-        "gmt_offset":  -10800
+        "id": 71,
+        "iso2": "FK",
+        "name_en": "Falkland Islands",
+        "name_ar": "جزر فوكلاند",
+        "gmt_offset": -10800
     },
     {
-        "id":  72,
-        "iso2":  "FO",
-        "name_en":  "Faroe Islands",
-        "name_ar":  "Ø¬Ø²Ø± ÙØ§Ø±Ùˆ",
-        "gmt_offset":  0
+        "id": 72,
+        "iso2": "FO",
+        "name_en": "Faroe Islands",
+        "name_ar": "جزر فارو",
+        "gmt_offset": 0
     },
     {
-        "id":  73,
-        "iso2":  "FJ",
-        "name_en":  "Fiji Islands",
-        "name_ar":  "Ø¬Ø²Ø± ÙÙŠØ¬ÙŠ",
-        "gmt_offset":  43200
+        "id": 73,
+        "iso2": "FJ",
+        "name_en": "Fiji Islands",
+        "name_ar": "جزر فيجي",
+        "gmt_offset": 43200
     },
     {
-        "id":  74,
-        "iso2":  "FI",
-        "name_en":  "Finland",
-        "name_ar":  "ÙÙ†Ù„Ù†Ø¯Ø§",
-        "gmt_offset":  7200
+        "id": 74,
+        "iso2": "FI",
+        "name_en": "Finland",
+        "name_ar": "فنلندا",
+        "gmt_offset": 7200
     },
     {
-        "id":  75,
-        "iso2":  "FR",
-        "name_en":  "France",
-        "name_ar":  "ÙØ±Ù†Ø³Ø§",
-        "gmt_offset":  3600
+        "id": 75,
+        "iso2": "FR",
+        "name_en": "France",
+        "name_ar": "فرنسا",
+        "gmt_offset": 3600
     },
     {
-        "id":  76,
-        "iso2":  "GF",
-        "name_en":  "French Guiana",
-        "name_ar":  "ØºÙˆÙŠØ§Ù†Ø§ Ø§Ù„ÙØ±Ù†Ø³ÙŠØ©",
-        "gmt_offset":  -10800
+        "id": 76,
+        "iso2": "GF",
+        "name_en": "French Guiana",
+        "name_ar": "غويانا الفرنسية",
+        "gmt_offset": -10800
     },
     {
-        "id":  77,
-        "iso2":  "PF",
-        "name_en":  "French Polynesia",
-        "name_ar":  "Ø¨ÙˆÙ„ÙŠÙ†ÙŠØ²ÙŠØ§ Ø§Ù„ÙØ±Ù†Ø³ÙŠØ©",
-        "gmt_offset":  -32400
+        "id": 77,
+        "iso2": "PF",
+        "name_en": "French Polynesia",
+        "name_ar": "بولينيزيا الفرنسية",
+        "gmt_offset": -32400
     },
     {
-        "id":  78,
-        "iso2":  "TF",
-        "name_en":  "French Southern Territories",
-        "name_ar":  "Ø§Ù„Ø£Ù‚Ø§Ù„ÙŠÙ… Ø§Ù„Ø¬Ù†ÙˆØ¨ÙŠØ© Ø§Ù„ÙØ±Ù†Ø³ÙŠØ©",
-        "gmt_offset":  18000
+        "id": 78,
+        "iso2": "TF",
+        "name_en": "French Southern Territories",
+        "name_ar": "الأقاليم الجنوبية الفرنسية",
+        "gmt_offset": 18000
     },
     {
-        "id":  79,
-        "iso2":  "GA",
-        "name_en":  "Gabon",
-        "name_ar":  "Ø§Ù„Ø¬Ø§Ø¨ÙˆÙ†",
-        "gmt_offset":  3600
+        "id": 79,
+        "iso2": "GA",
+        "name_en": "Gabon",
+        "name_ar": "الجابون",
+        "gmt_offset": 3600
     },
     {
-        "id":  81,
-        "iso2":  "GE",
-        "name_en":  "Georgia",
-        "name_ar":  "Ø¬ÙˆØ±Ø¬ÙŠØ§",
-        "gmt_offset":  14400
+        "id": 81,
+        "iso2": "GE",
+        "name_en": "Georgia",
+        "name_ar": "جورجيا",
+        "gmt_offset": 14400
     },
     {
-        "id":  82,
-        "iso2":  "DE",
-        "name_en":  "Germany",
-        "name_ar":  "Ø£Ù„Ù…Ø§Ù†ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 82,
+        "iso2": "DE",
+        "name_en": "Germany",
+        "name_ar": "ألمانيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  83,
-        "iso2":  "GH",
-        "name_en":  "Ghana",
-        "name_ar":  "ØºØ§Ù†Ø§",
-        "gmt_offset":  0
+        "id": 83,
+        "iso2": "GH",
+        "name_en": "Ghana",
+        "name_ar": "غانا",
+        "gmt_offset": 0
     },
     {
-        "id":  84,
-        "iso2":  "GI",
-        "name_en":  "Gibraltar",
-        "name_ar":  "Ø¬Ø¨Ù„ Ø·Ø§Ø±Ù‚",
-        "gmt_offset":  3600
+        "id": 84,
+        "iso2": "GI",
+        "name_en": "Gibraltar",
+        "name_ar": "جبل طارق",
+        "gmt_offset": 3600
     },
     {
-        "id":  85,
-        "iso2":  "GR",
-        "name_en":  "Greece",
-        "name_ar":  "Ø§Ù„ÙŠÙˆÙ†Ø§Ù†",
-        "gmt_offset":  7200
+        "id": 85,
+        "iso2": "GR",
+        "name_en": "Greece",
+        "name_ar": "اليونان",
+        "gmt_offset": 7200
     },
     {
-        "id":  86,
-        "iso2":  "GL",
-        "name_en":  "Greenland",
-        "name_ar":  "ØºØ±ÙŠÙ†Ù„Ø§Ù†Ø¯",
-        "gmt_offset":  0
+        "id": 86,
+        "iso2": "GL",
+        "name_en": "Greenland",
+        "name_ar": "غرينلاند",
+        "gmt_offset": 0
     },
     {
-        "id":  87,
-        "iso2":  "GD",
-        "name_en":  "Grenada",
-        "name_ar":  "ØºØ±ÙŠÙ†Ø§Ø¯Ø§",
-        "gmt_offset":  -14400
+        "id": 87,
+        "iso2": "GD",
+        "name_en": "Grenada",
+        "name_ar": "غرينادا",
+        "gmt_offset": -14400
     },
     {
-        "id":  88,
-        "iso2":  "GP",
-        "name_en":  "Guadeloupe",
-        "name_ar":  "ØºÙˆØ§Ø¯ÙŠÙ„ÙˆØ¨",
-        "gmt_offset":  -14400
+        "id": 88,
+        "iso2": "GP",
+        "name_en": "Guadeloupe",
+        "name_ar": "غواديلوب",
+        "gmt_offset": -14400
     },
     {
-        "id":  89,
-        "iso2":  "GU",
-        "name_en":  "Guam",
-        "name_ar":  "ØºÙˆØ§Ù…",
-        "gmt_offset":  36000
+        "id": 89,
+        "iso2": "GU",
+        "name_en": "Guam",
+        "name_ar": "غوام",
+        "gmt_offset": 36000
     },
     {
-        "id":  90,
-        "iso2":  "GT",
-        "name_en":  "Guatemala",
-        "name_ar":  "ØºÙˆØ§ØªÙŠÙ…Ø§Ù„Ø§",
-        "gmt_offset":  -21600
+        "id": 90,
+        "iso2": "GT",
+        "name_en": "Guatemala",
+        "name_ar": "غواتيمالا",
+        "gmt_offset": -21600
     },
     {
-        "id":  91,
-        "iso2":  "GG",
-        "name_en":  "Guernsey",
-        "name_ar":  "ØºÙŠØ±Ù†Ø³ÙŠ",
-        "gmt_offset":  0
+        "id": 91,
+        "iso2": "GG",
+        "name_en": "Guernsey",
+        "name_ar": "غيرنسي",
+        "gmt_offset": 0
     },
     {
-        "id":  92,
-        "iso2":  "GN",
-        "name_en":  "Guinea",
-        "name_ar":  "ØºÙŠÙ†ÙŠØ§",
-        "gmt_offset":  0
+        "id": 92,
+        "iso2": "GN",
+        "name_en": "Guinea",
+        "name_ar": "غينيا",
+        "gmt_offset": 0
     },
     {
-        "id":  93,
-        "iso2":  "GW",
-        "name_en":  "Guinea-Bissau",
-        "name_ar":  "ØºÙŠÙ†ÙŠØ§ Ø¨ÙŠØ³Ø§Ùˆ",
-        "gmt_offset":  0
+        "id": 93,
+        "iso2": "GW",
+        "name_en": "Guinea-Bissau",
+        "name_ar": "غينيا بيساو",
+        "gmt_offset": 0
     },
     {
-        "id":  94,
-        "iso2":  "GY",
-        "name_en":  "Guyana",
-        "name_ar":  "ØºÙŠØ§Ù†Ø§",
-        "gmt_offset":  -14400
+        "id": 94,
+        "iso2": "GY",
+        "name_en": "Guyana",
+        "name_ar": "غيانا",
+        "gmt_offset": -14400
     },
     {
-        "id":  95,
-        "iso2":  "HT",
-        "name_en":  "Haiti",
-        "name_ar":  "Ù‡Ø§ÙŠØªÙŠ",
-        "gmt_offset":  -18000
+        "id": 95,
+        "iso2": "HT",
+        "name_en": "Haiti",
+        "name_ar": "هايتي",
+        "gmt_offset": -18000
     },
     {
-        "id":  96,
-        "iso2":  "HM",
-        "name_en":  "Heard Island and McDonald Islands",
-        "name_ar":  "Ø³Ù…Ø¹Øª Ø¬Ø²ÙŠØ±Ø© ÙˆØ¬Ø²Ø± Ù…Ø§ÙƒØ¯ÙˆÙ†Ø§Ù„Ø¯",
-        "gmt_offset":  18000
+        "id": 96,
+        "iso2": "HM",
+        "name_en": "Heard Island and McDonald Islands",
+        "name_ar": "سمعت جزيرة وجزر ماكدونالد",
+        "gmt_offset": 18000
     },
     {
-        "id":  97,
-        "iso2":  "HN",
-        "name_en":  "Honduras",
-        "name_ar":  "Ù‡Ù†Ø¯ÙˆØ±Ø§Ø³",
-        "gmt_offset":  -21600
+        "id": 97,
+        "iso2": "HN",
+        "name_en": "Honduras",
+        "name_ar": "هندوراس",
+        "gmt_offset": -21600
     },
     {
-        "id":  98,
-        "iso2":  "HK",
-        "name_en":  "Hong Kong S.A.R.",
-        "name_ar":  "Ù‡ÙˆÙ†Øº ÙƒÙˆÙ†Øº Ø³.",
-        "gmt_offset":  28800
+        "id": 98,
+        "iso2": "HK",
+        "name_en": "Hong Kong S.A.R.",
+        "name_ar": "هونغ كونغ س.",
+        "gmt_offset": 28800
     },
     {
-        "id":  99,
-        "iso2":  "HU",
-        "name_en":  "Hungary",
-        "name_ar":  "Ù‡Ù†ØºØ§Ø±ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 99,
+        "iso2": "HU",
+        "name_en": "Hungary",
+        "name_ar": "هنغاريا",
+        "gmt_offset": 3600
     },
     {
-        "id":  100,
-        "iso2":  "IS",
-        "name_en":  "Iceland",
-        "name_ar":  "Ø£ÙŠØ³Ù„Ù†Ø¯Ø§",
-        "gmt_offset":  0
+        "id": 100,
+        "iso2": "IS",
+        "name_en": "Iceland",
+        "name_ar": "أيسلندا",
+        "gmt_offset": 0
     },
     {
-        "id":  101,
-        "iso2":  "IN",
-        "name_en":  "India",
-        "name_ar":  "Ø§Ù„Ù‡Ù†Ø¯",
-        "gmt_offset":  19800
+        "id": 101,
+        "iso2": "IN",
+        "name_en": "India",
+        "name_ar": "الهند",
+        "gmt_offset": 19800
     },
     {
-        "id":  102,
-        "iso2":  "ID",
-        "name_en":  "Indonesia",
-        "name_ar":  "Ø£Ù†Ø¯ÙˆÙ†ÙŠØ³ÙŠØ§",
-        "gmt_offset":  25200
+        "id": 102,
+        "iso2": "ID",
+        "name_en": "Indonesia",
+        "name_ar": "أندونيسيا",
+        "gmt_offset": 25200
     },
     {
-        "id":  103,
-        "iso2":  "IR",
-        "name_en":  "Iran",
-        "name_ar":  "Ø¥ÙŠØ±Ø§Ù†",
-        "gmt_offset":  12600
+        "id": 103,
+        "iso2": "IR",
+        "name_en": "Iran",
+        "name_ar": "إيران",
+        "gmt_offset": 12600
     },
     {
-        "id":  104,
-        "iso2":  "IQ",
-        "name_en":  "Iraq",
-        "name_ar":  "Ø§Ù„Ø¹Ø±Ø§Ù‚",
-        "gmt_offset":  10800
+        "id": 104,
+        "iso2": "IQ",
+        "name_en": "Iraq",
+        "name_ar": "العراق",
+        "gmt_offset": 10800
     },
     {
-        "id":  105,
-        "iso2":  "IE",
-        "name_en":  "Ireland",
-        "name_ar":  "Ø£ÙŠØ±Ù„Ù†Ø¯Ø§",
-        "gmt_offset":  0
+        "id": 105,
+        "iso2": "IE",
+        "name_en": "Ireland",
+        "name_ar": "أيرلندا",
+        "gmt_offset": 0
     },
     {
-        "id":  106,
-        "iso2":  "IL",
-        "name_en":  "Israel",
-        "name_ar":  "Ø¥Ø³Ø±Ø§Ø¦ÙŠÙ„",
-        "gmt_offset":  7200
+        "id": 106,
+        "iso2": "IL",
+        "name_en": "Israel",
+        "name_ar": "إسرائيل",
+        "gmt_offset": 7200
     },
     {
-        "id":  107,
-        "iso2":  "IT",
-        "name_en":  "Italy",
-        "name_ar":  "Ø¥ÙŠØ·Ø§Ù„ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 107,
+        "iso2": "IT",
+        "name_en": "Italy",
+        "name_ar": "إيطاليا",
+        "gmt_offset": 3600
     },
     {
-        "id":  54,
-        "iso2":  "CI",
-        "name_en":  "Ivory Coast",
-        "name_ar":  "ÙƒÙˆØª Ø¯ÙŠÙÙˆØ§Ø± (Ø³Ø§Ø­Ù„ Ø§Ù„Ø¹Ø§Ø¬)",
-        "gmt_offset":  0
+        "id": 54,
+        "iso2": "CI",
+        "name_en": "Ivory Coast",
+        "name_ar": "كوت ديفوار (ساحل العاج)",
+        "gmt_offset": 0
     },
     {
-        "id":  108,
-        "iso2":  "JM",
-        "name_en":  "Jamaica",
-        "name_ar":  "Ø¬Ø§Ù…Ø§ÙŠÙƒØ§",
-        "gmt_offset":  -18000
+        "id": 108,
+        "iso2": "JM",
+        "name_en": "Jamaica",
+        "name_ar": "جامايكا",
+        "gmt_offset": -18000
     },
     {
-        "id":  109,
-        "iso2":  "JP",
-        "name_en":  "Japan",
-        "name_ar":  "Ø§Ù„ÙŠØ§Ø¨Ø§Ù†",
-        "gmt_offset":  32400
+        "id": 109,
+        "iso2": "JP",
+        "name_en": "Japan",
+        "name_ar": "اليابان",
+        "gmt_offset": 32400
     },
     {
-        "id":  110,
-        "iso2":  "JE",
-        "name_en":  "Jersey",
-        "name_ar":  "Ø¬ÙŠØ±Ø³ÙŠ",
-        "gmt_offset":  0
+        "id": 110,
+        "iso2": "JE",
+        "name_en": "Jersey",
+        "name_ar": "جيرسي",
+        "gmt_offset": 0
     },
     {
-        "id":  111,
-        "iso2":  "JO",
-        "name_en":  "Jordan",
-        "name_ar":  "Ø§Ù„Ø£Ø±Ø¯Ù†",
-        "gmt_offset":  7200
+        "id": 111,
+        "iso2": "JO",
+        "name_en": "Jordan",
+        "name_ar": "الأردن",
+        "gmt_offset": 7200
     },
     {
-        "id":  112,
-        "iso2":  "KZ",
-        "name_en":  "Kazakhstan",
-        "name_ar":  "ÙƒØ§Ø²Ø§Ø®Ø³ØªØ§Ù†",
-        "gmt_offset":  21600
+        "id": 112,
+        "iso2": "KZ",
+        "name_en": "Kazakhstan",
+        "name_ar": "كازاخستان",
+        "gmt_offset": 21600
     },
     {
-        "id":  113,
-        "iso2":  "KE",
-        "name_en":  "Kenya",
-        "name_ar":  "ÙƒÙŠÙ†ÙŠØ§",
-        "gmt_offset":  10800
+        "id": 113,
+        "iso2": "KE",
+        "name_en": "Kenya",
+        "name_ar": "كينيا",
+        "gmt_offset": 10800
     },
     {
-        "id":  114,
-        "iso2":  "KI",
-        "name_en":  "Kiribati",
-        "name_ar":  "ÙƒÙŠØ±ÙŠØ¨Ø§ØªÙŠ",
-        "gmt_offset":  46800
+        "id": 114,
+        "iso2": "KI",
+        "name_en": "Kiribati",
+        "name_ar": "كيريباتي",
+        "gmt_offset": 46800
     },
     {
-        "id":  248,
-        "iso2":  "XK",
-        "name_en":  "Kosovo",
-        "name_ar":  "ÙƒÙˆØ³ÙˆÙÙˆ",
-        "gmt_offset":  3600
+        "id": 248,
+        "iso2": "XK",
+        "name_en": "Kosovo",
+        "name_ar": "كوسوفو",
+        "gmt_offset": 3600
     },
     {
-        "id":  117,
-        "iso2":  "KW",
-        "name_en":  "Kuwait",
-        "name_ar":  "Ø§Ù„ÙƒÙˆÙŠØª",
-        "gmt_offset":  10800
+        "id": 117,
+        "iso2": "KW",
+        "name_en": "Kuwait",
+        "name_ar": "الكويت",
+        "gmt_offset": 10800
     },
     {
-        "id":  118,
-        "iso2":  "KG",
-        "name_en":  "Kyrgyzstan",
-        "name_ar":  "Ù‚ÙŠØ±ØºÙŠØ²Ø³ØªØ§Ù†",
-        "gmt_offset":  21600
+        "id": 118,
+        "iso2": "KG",
+        "name_en": "Kyrgyzstan",
+        "name_ar": "قيرغيزستان",
+        "gmt_offset": 21600
     },
     {
-        "id":  119,
-        "iso2":  "LA",
-        "name_en":  "Laos",
-        "name_ar":  "Ù„Ø§ÙˆØ³",
-        "gmt_offset":  25200
+        "id": 119,
+        "iso2": "LA",
+        "name_en": "Laos",
+        "name_ar": "لاوس",
+        "gmt_offset": 25200
     },
     {
-        "id":  120,
-        "iso2":  "LV",
-        "name_en":  "Latvia",
-        "name_ar":  "Ù„Ø§ØªÙÙŠØ§",
-        "gmt_offset":  7200
+        "id": 120,
+        "iso2": "LV",
+        "name_en": "Latvia",
+        "name_ar": "لاتفيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  121,
-        "iso2":  "LB",
-        "name_en":  "Lebanon",
-        "name_ar":  "Ù„Ø¨Ù†Ø§Ù†",
-        "gmt_offset":  7200
+        "id": 121,
+        "iso2": "LB",
+        "name_en": "Lebanon",
+        "name_ar": "لبنان",
+        "gmt_offset": 7200
     },
     {
-        "id":  122,
-        "iso2":  "LS",
-        "name_en":  "Lesotho",
-        "name_ar":  "Ù„ÙŠØ³ÙˆØªÙˆ",
-        "gmt_offset":  7200
+        "id": 122,
+        "iso2": "LS",
+        "name_en": "Lesotho",
+        "name_ar": "ليسوتو",
+        "gmt_offset": 7200
     },
     {
-        "id":  123,
-        "iso2":  "LR",
-        "name_en":  "Liberia",
-        "name_ar":  "Ù„ÙŠØ¨ÙŠØ±ÙŠØ§",
-        "gmt_offset":  0
+        "id": 123,
+        "iso2": "LR",
+        "name_en": "Liberia",
+        "name_ar": "ليبيريا",
+        "gmt_offset": 0
     },
     {
-        "id":  124,
-        "iso2":  "LY",
-        "name_en":  "Libya",
-        "name_ar":  "Ù„ÙŠØ¨ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 124,
+        "iso2": "LY",
+        "name_en": "Libya",
+        "name_ar": "ليبيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  125,
-        "iso2":  "LI",
-        "name_en":  "Liechtenstein",
-        "name_ar":  "Ù„ÙŠØ®ØªÙ†Ø´ØªØ§ÙŠÙ†",
-        "gmt_offset":  3600
+        "id": 125,
+        "iso2": "LI",
+        "name_en": "Liechtenstein",
+        "name_ar": "ليختنشتاين",
+        "gmt_offset": 3600
     },
     {
-        "id":  126,
-        "iso2":  "LT",
-        "name_en":  "Lithuania",
-        "name_ar":  "Ù„ÙŠØªÙˆØ§Ù†ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 126,
+        "iso2": "LT",
+        "name_en": "Lithuania",
+        "name_ar": "ليتوانيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  127,
-        "iso2":  "LU",
-        "name_en":  "Luxembourg",
-        "name_ar":  "Ù„ÙˆÙƒØ³Ù…Ø¨ÙˆØ±Øº",
-        "gmt_offset":  3600
+        "id": 127,
+        "iso2": "LU",
+        "name_en": "Luxembourg",
+        "name_ar": "لوكسمبورغ",
+        "gmt_offset": 3600
     },
     {
-        "id":  128,
-        "iso2":  "MO",
-        "name_en":  "Macau S.A.R.",
-        "name_ar":  "Ù…Ø§ÙƒØ§Ùˆ Ø³.",
-        "gmt_offset":  28800
+        "id": 128,
+        "iso2": "MO",
+        "name_en": "Macau S.A.R.",
+        "name_ar": "ماكاو س.",
+        "gmt_offset": 28800
     },
     {
-        "id":  130,
-        "iso2":  "MG",
-        "name_en":  "Madagascar",
-        "name_ar":  "Ù…Ø¯ØºØ´Ù‚Ø±",
-        "gmt_offset":  10800
+        "id": 130,
+        "iso2": "MG",
+        "name_en": "Madagascar",
+        "name_ar": "مدغشقر",
+        "gmt_offset": 10800
     },
     {
-        "id":  131,
-        "iso2":  "MW",
-        "name_en":  "Malawi",
-        "name_ar":  "Ù…Ù„Ø§ÙˆÙŠ",
-        "gmt_offset":  7200
+        "id": 131,
+        "iso2": "MW",
+        "name_en": "Malawi",
+        "name_ar": "ملاوي",
+        "gmt_offset": 7200
     },
     {
-        "id":  132,
-        "iso2":  "MY",
-        "name_en":  "Malaysia",
-        "name_ar":  "Ù…Ø§Ù„ÙŠØ²ÙŠØ§",
-        "gmt_offset":  28800
+        "id": 132,
+        "iso2": "MY",
+        "name_en": "Malaysia",
+        "name_ar": "ماليزيا",
+        "gmt_offset": 28800
     },
     {
-        "id":  133,
-        "iso2":  "MV",
-        "name_en":  "Maldives",
-        "name_ar":  "Ø¬Ø²Ø± Ø§Ù„Ù…Ø§Ù„Ø¯ÙŠÙ",
-        "gmt_offset":  18000
+        "id": 133,
+        "iso2": "MV",
+        "name_en": "Maldives",
+        "name_ar": "جزر المالديف",
+        "gmt_offset": 18000
     },
     {
-        "id":  134,
-        "iso2":  "ML",
-        "name_en":  "Mali",
-        "name_ar":  "Ù…Ø§Ù„ÙŠ",
-        "gmt_offset":  0
+        "id": 134,
+        "iso2": "ML",
+        "name_en": "Mali",
+        "name_ar": "مالي",
+        "gmt_offset": 0
     },
     {
-        "id":  135,
-        "iso2":  "MT",
-        "name_en":  "Malta",
-        "name_ar":  "Ù…Ø§Ù„Ø·Ø§",
-        "gmt_offset":  3600
+        "id": 135,
+        "iso2": "MT",
+        "name_en": "Malta",
+        "name_ar": "مالطا",
+        "gmt_offset": 3600
     },
     {
-        "id":  136,
-        "iso2":  "IM",
-        "name_en":  "Man (Isle of)",
-        "name_ar":  "Ø±Ø¬Ù„ (Ø¬Ø²ÙŠØ±Ø©)",
-        "gmt_offset":  0
+        "id": 136,
+        "iso2": "IM",
+        "name_en": "Man (Isle of)",
+        "name_ar": "رجل (جزيرة)",
+        "gmt_offset": 0
     },
     {
-        "id":  137,
-        "iso2":  "MH",
-        "name_en":  "Marshall Islands",
-        "name_ar":  "Ø¬Ø²Ø± Ù…Ø§Ø±Ø´Ø§Ù„",
-        "gmt_offset":  43200
+        "id": 137,
+        "iso2": "MH",
+        "name_en": "Marshall Islands",
+        "name_ar": "جزر مارشال",
+        "gmt_offset": 43200
     },
     {
-        "id":  138,
-        "iso2":  "MQ",
-        "name_en":  "Martinique",
-        "name_ar":  "Ù…Ø§Ø±ØªÙŠÙ†ÙŠÙƒ",
-        "gmt_offset":  -14400
+        "id": 138,
+        "iso2": "MQ",
+        "name_en": "Martinique",
+        "name_ar": "مارتينيك",
+        "gmt_offset": -14400
     },
     {
-        "id":  139,
-        "iso2":  "MR",
-        "name_en":  "Mauritania",
-        "name_ar":  "Ù…ÙˆØ±ÙŠØªØ§Ù†ÙŠØ§",
-        "gmt_offset":  0
+        "id": 139,
+        "iso2": "MR",
+        "name_en": "Mauritania",
+        "name_ar": "موريتانيا",
+        "gmt_offset": 0
     },
     {
-        "id":  140,
-        "iso2":  "MU",
-        "name_en":  "Mauritius",
-        "name_ar":  "Ù…ÙˆØ±ÙŠØ´ÙŠÙˆØ³",
-        "gmt_offset":  14400
+        "id": 140,
+        "iso2": "MU",
+        "name_en": "Mauritius",
+        "name_ar": "موريشيوس",
+        "gmt_offset": 14400
     },
     {
-        "id":  141,
-        "iso2":  "YT",
-        "name_en":  "Mayotte",
-        "name_ar":  "Ù…Ø§ÙŠÙˆØª",
-        "gmt_offset":  10800
+        "id": 141,
+        "iso2": "YT",
+        "name_en": "Mayotte",
+        "name_ar": "مايوت",
+        "gmt_offset": 10800
     },
     {
-        "id":  142,
-        "iso2":  "MX",
-        "name_en":  "Mexico",
-        "name_ar":  "Ø§Ù„Ù…ÙƒØ³ÙŠÙƒ",
-        "gmt_offset":  -21600
+        "id": 142,
+        "iso2": "MX",
+        "name_en": "Mexico",
+        "name_ar": "المكسيك",
+        "gmt_offset": -21600
     },
     {
-        "id":  143,
-        "iso2":  "FM",
-        "name_en":  "Micronesia",
-        "name_ar":  "Ù…ÙŠÙƒØ±ÙˆÙ†ÙŠØ³ÙŠØ§",
-        "gmt_offset":  36000
+        "id": 143,
+        "iso2": "FM",
+        "name_en": "Micronesia",
+        "name_ar": "ميكرونيسيا",
+        "gmt_offset": 36000
     },
     {
-        "id":  144,
-        "iso2":  "MD",
-        "name_en":  "Moldova",
-        "name_ar":  "Ù…ÙˆÙ„Ø¯ÙˆÙØ§",
-        "gmt_offset":  7200
+        "id": 144,
+        "iso2": "MD",
+        "name_en": "Moldova",
+        "name_ar": "مولدوفا",
+        "gmt_offset": 7200
     },
     {
-        "id":  145,
-        "iso2":  "MC",
-        "name_en":  "Monaco",
-        "name_ar":  "Ù…ÙˆÙ†Ø§ÙƒÙˆ",
-        "gmt_offset":  3600
+        "id": 145,
+        "iso2": "MC",
+        "name_en": "Monaco",
+        "name_ar": "موناكو",
+        "gmt_offset": 3600
     },
     {
-        "id":  146,
-        "iso2":  "MN",
-        "name_en":  "Mongolia",
-        "name_ar":  "Ù…Ù†ØºÙˆÙ„ÙŠØ§",
-        "gmt_offset":  28800
+        "id": 146,
+        "iso2": "MN",
+        "name_en": "Mongolia",
+        "name_ar": "منغوليا",
+        "gmt_offset": 28800
     },
     {
-        "id":  147,
-        "iso2":  "ME",
-        "name_en":  "Montenegro",
-        "name_ar":  "Ø§Ù„Ø¬Ø¨Ù„ Ø§Ù„Ø£Ø³ÙˆØ¯",
-        "gmt_offset":  3600
+        "id": 147,
+        "iso2": "ME",
+        "name_en": "Montenegro",
+        "name_ar": "الجبل الأسود",
+        "gmt_offset": 3600
     },
     {
-        "id":  148,
-        "iso2":  "MS",
-        "name_en":  "Montserrat",
-        "name_ar":  "Ù…ÙˆÙ†ØªØ³ÙŠØ±Ø§Øª",
-        "gmt_offset":  -14400
+        "id": 148,
+        "iso2": "MS",
+        "name_en": "Montserrat",
+        "name_ar": "مونتسيرات",
+        "gmt_offset": -14400
     },
     {
-        "id":  149,
-        "iso2":  "MA",
-        "name_en":  "Morocco",
-        "name_ar":  "Ø§Ù„Ù…ØºØ±Ø¨",
-        "gmt_offset":  3600
+        "id": 149,
+        "iso2": "MA",
+        "name_en": "Morocco",
+        "name_ar": "المغرب",
+        "gmt_offset": 3600
     },
     {
-        "id":  150,
-        "iso2":  "MZ",
-        "name_en":  "Mozambique",
-        "name_ar":  "Ù…ÙˆØ²Ù…Ø¨ÙŠÙ‚",
-        "gmt_offset":  7200
+        "id": 150,
+        "iso2": "MZ",
+        "name_en": "Mozambique",
+        "name_ar": "موزمبيق",
+        "gmt_offset": 7200
     },
     {
-        "id":  151,
-        "iso2":  "MM",
-        "name_en":  "Myanmar",
-        "name_ar":  "Ù…ÙŠØ§Ù†Ù…Ø§Ø±",
-        "gmt_offset":  23400
+        "id": 151,
+        "iso2": "MM",
+        "name_en": "Myanmar",
+        "name_ar": "ميانمار",
+        "gmt_offset": 23400
     },
     {
-        "id":  152,
-        "iso2":  "NA",
-        "name_en":  "Namibia",
-        "name_ar":  "Ù†Ø§Ù…ÙŠØ¨ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 152,
+        "iso2": "NA",
+        "name_en": "Namibia",
+        "name_ar": "ناميبيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  153,
-        "iso2":  "NR",
-        "name_en":  "Nauru",
-        "name_ar":  "Ù†Ø§ÙˆØ±Ùˆ",
-        "gmt_offset":  43200
+        "id": 153,
+        "iso2": "NR",
+        "name_en": "Nauru",
+        "name_ar": "ناورو",
+        "gmt_offset": 43200
     },
     {
-        "id":  154,
-        "iso2":  "NP",
-        "name_en":  "Nepal",
-        "name_ar":  "Ù†ÙŠØ¨Ø§Ù„",
-        "gmt_offset":  20700
+        "id": 154,
+        "iso2": "NP",
+        "name_en": "Nepal",
+        "name_ar": "نيبال",
+        "gmt_offset": 20700
     },
     {
-        "id":  156,
-        "iso2":  "NL",
-        "name_en":  "Netherlands",
-        "name_ar":  "Ù‡ÙˆÙ„Ù†Ø¯Ø§",
-        "gmt_offset":  3600
+        "id": 156,
+        "iso2": "NL",
+        "name_en": "Netherlands",
+        "name_ar": "هولندا",
+        "gmt_offset": 3600
     },
     {
-        "id":  157,
-        "iso2":  "NC",
-        "name_en":  "New Caledonia",
-        "name_ar":  "ÙƒØ§Ù„ÙŠØ¯ÙˆÙ†ÙŠØ§ Ø§Ù„Ø¬Ø¯ÙŠØ¯Ø©",
-        "gmt_offset":  39600
+        "id": 157,
+        "iso2": "NC",
+        "name_en": "New Caledonia",
+        "name_ar": "كاليدونيا الجديدة",
+        "gmt_offset": 39600
     },
     {
-        "id":  158,
-        "iso2":  "NZ",
-        "name_en":  "New Zealand",
-        "name_ar":  "Ù†ÙŠÙˆØ²ÙŠÙ„Ù†Ø¯Ø§",
-        "gmt_offset":  46800
+        "id": 158,
+        "iso2": "NZ",
+        "name_en": "New Zealand",
+        "name_ar": "نيوزيلندا",
+        "gmt_offset": 46800
     },
     {
-        "id":  159,
-        "iso2":  "NI",
-        "name_en":  "Nicaragua",
-        "name_ar":  "Ù†ÙŠÙƒØ§Ø±Ø§ØºÙˆØ§",
-        "gmt_offset":  -21600
+        "id": 159,
+        "iso2": "NI",
+        "name_en": "Nicaragua",
+        "name_ar": "نيكاراغوا",
+        "gmt_offset": -21600
     },
     {
-        "id":  160,
-        "iso2":  "NE",
-        "name_en":  "Niger",
-        "name_ar":  "Ø§Ù„Ù†ÙŠØ¬Ø±",
-        "gmt_offset":  3600
+        "id": 160,
+        "iso2": "NE",
+        "name_en": "Niger",
+        "name_ar": "النيجر",
+        "gmt_offset": 3600
     },
     {
-        "id":  161,
-        "iso2":  "NG",
-        "name_en":  "Nigeria",
-        "name_ar":  "Ù†ÙŠØ¬ÙŠØ±ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 161,
+        "iso2": "NG",
+        "name_en": "Nigeria",
+        "name_ar": "نيجيريا",
+        "gmt_offset": 3600
     },
     {
-        "id":  162,
-        "iso2":  "NU",
-        "name_en":  "Niue",
-        "name_ar":  "Ù†ÙŠÙˆ",
-        "gmt_offset":  -39600
+        "id": 162,
+        "iso2": "NU",
+        "name_en": "Niue",
+        "name_ar": "نيو",
+        "gmt_offset": -39600
     },
     {
-        "id":  163,
-        "iso2":  "NF",
-        "name_en":  "Norfolk Island",
-        "name_ar":  "Ø¬Ø²ÙŠØ±Ø© Ù†ÙˆØ±ÙÙˆÙ„Ùƒ",
-        "gmt_offset":  43200
+        "id": 163,
+        "iso2": "NF",
+        "name_en": "Norfolk Island",
+        "name_ar": "جزيرة نورفولك",
+        "gmt_offset": 43200
     },
     {
-        "id":  115,
-        "iso2":  "KP",
-        "name_en":  "North Korea",
-        "name_ar":  "ÙƒÙˆØ±ÙŠØ§ Ø§Ù„Ø´Ù…Ø§Ù„ÙŠØ©",
-        "gmt_offset":  32400
+        "id": 115,
+        "iso2": "KP",
+        "name_en": "North Korea",
+        "name_ar": "كوريا الشمالية",
+        "gmt_offset": 32400
     },
     {
-        "id":  129,
-        "iso2":  "MK",
-        "name_en":  "North Macedonia",
-        "name_ar":  "Ø´Ù…Ø§Ù„ Ù…Ù‚Ø¯ÙˆÙ†ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 129,
+        "iso2": "MK",
+        "name_en": "North Macedonia",
+        "name_ar": "شمال مقدونيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  164,
-        "iso2":  "MP",
-        "name_en":  "Northern Mariana Islands",
-        "name_ar":  "Ø¬Ø²Ø± Ù…Ø§Ø±ÙŠØ§Ù†Ø§ Ø§Ù„Ø´Ù…Ø§Ù„ÙŠØ©",
-        "gmt_offset":  36000
+        "id": 164,
+        "iso2": "MP",
+        "name_en": "Northern Mariana Islands",
+        "name_ar": "جزر ماريانا الشمالية",
+        "gmt_offset": 36000
     },
     {
-        "id":  165,
-        "iso2":  "NO",
-        "name_en":  "Norway",
-        "name_ar":  "Ø§Ù„Ù†Ø±ÙˆÙŠØ¬",
-        "gmt_offset":  3600
+        "id": 165,
+        "iso2": "NO",
+        "name_en": "Norway",
+        "name_ar": "النرويج",
+        "gmt_offset": 3600
     },
     {
-        "id":  166,
-        "iso2":  "OM",
-        "name_en":  "Oman",
-        "name_ar":  "Ø¹Ù…Ø§Ù†",
-        "gmt_offset":  14400
+        "id": 166,
+        "iso2": "OM",
+        "name_en": "Oman",
+        "name_ar": "عمان",
+        "gmt_offset": 14400
     },
     {
-        "id":  167,
-        "iso2":  "PK",
-        "name_en":  "Pakistan",
-        "name_ar":  "Ø¨Ø§ÙƒØ³ØªØ§Ù†",
-        "gmt_offset":  18000
+        "id": 167,
+        "iso2": "PK",
+        "name_en": "Pakistan",
+        "name_ar": "باكستان",
+        "gmt_offset": 18000
     },
     {
-        "id":  168,
-        "iso2":  "PW",
-        "name_en":  "Palau",
-        "name_ar":  "Ø¨Ø§Ù„Ø§Ùˆ",
-        "gmt_offset":  32400
+        "id": 168,
+        "iso2": "PW",
+        "name_en": "Palau",
+        "name_ar": "بالاو",
+        "gmt_offset": 32400
     },
     {
-        "id":  169,
-        "iso2":  "PS",
-        "name_en":  "Palestinian Territory Occupied",
-        "name_ar":  "Ø§Ø­ØªÙ„Øª Ø§Ù„Ø£Ø±Ø§Ø¶ÙŠ Ø§Ù„ÙÙ„Ø³Ø·ÙŠÙ†ÙŠØ©",
-        "gmt_offset":  7200
+        "id": 169,
+        "iso2": "PS",
+        "name_en": "Palestinian Territory Occupied",
+        "name_ar": "احتلت الأراضي الفلسطينية",
+        "gmt_offset": 7200
     },
     {
-        "id":  170,
-        "iso2":  "PA",
-        "name_en":  "Panama",
-        "name_ar":  "Ø¨Ù†Ù…Ø§",
-        "gmt_offset":  -18000
+        "id": 170,
+        "iso2": "PA",
+        "name_en": "Panama",
+        "name_ar": "بنما",
+        "gmt_offset": -18000
     },
     {
-        "id":  171,
-        "iso2":  "PG",
-        "name_en":  "Papua New Guinea",
-        "name_ar":  "Ø¨Ø§Ø¨ÙˆØ§ ØºÙŠÙ†ÙŠØ§ Ø§Ù„Ø¬Ø¯ÙŠØ¯Ø©",
-        "gmt_offset":  39600
+        "id": 171,
+        "iso2": "PG",
+        "name_en": "Papua New Guinea",
+        "name_ar": "بابوا غينيا الجديدة",
+        "gmt_offset": 39600
     },
     {
-        "id":  172,
-        "iso2":  "PY",
-        "name_en":  "Paraguay",
-        "name_ar":  "Ø¨Ø§Ø±Ø§Ø¬ÙˆØ§ÙŠ",
-        "gmt_offset":  -10800
+        "id": 172,
+        "iso2": "PY",
+        "name_en": "Paraguay",
+        "name_ar": "باراجواي",
+        "gmt_offset": -10800
     },
     {
-        "id":  173,
-        "iso2":  "PE",
-        "name_en":  "Peru",
-        "name_ar":  "Ø¨ÙŠØ±Ùˆ",
-        "gmt_offset":  -18000
+        "id": 173,
+        "iso2": "PE",
+        "name_en": "Peru",
+        "name_ar": "بيرو",
+        "gmt_offset": -18000
     },
     {
-        "id":  174,
-        "iso2":  "PH",
-        "name_en":  "Philippines",
-        "name_ar":  "ÙÙŠÙ„Ø¨ÙŠÙ†ÙŠ",
-        "gmt_offset":  28800
+        "id": 174,
+        "iso2": "PH",
+        "name_en": "Philippines",
+        "name_ar": "فيلبيني",
+        "gmt_offset": 28800
     },
     {
-        "id":  175,
-        "iso2":  "PN",
-        "name_en":  "Pitcairn Island",
-        "name_ar":  "Ø¬Ø²ÙŠØ±Ø© Ø¨ÙŠØªÙƒÙŠØ±Ù†",
-        "gmt_offset":  -28800
+        "id": 175,
+        "iso2": "PN",
+        "name_en": "Pitcairn Island",
+        "name_ar": "جزيرة بيتكيرن",
+        "gmt_offset": -28800
     },
     {
-        "id":  176,
-        "iso2":  "PL",
-        "name_en":  "Poland",
-        "name_ar":  "Ø¨ÙˆÙ„Ù†Ø¯Ø§",
-        "gmt_offset":  3600
+        "id": 176,
+        "iso2": "PL",
+        "name_en": "Poland",
+        "name_ar": "بولندا",
+        "gmt_offset": 3600
     },
     {
-        "id":  177,
-        "iso2":  "PT",
-        "name_en":  "Portugal",
-        "name_ar":  "Ø§Ù„Ø¨Ø±ØªØºØ§Ù„",
-        "gmt_offset":  -3600
+        "id": 177,
+        "iso2": "PT",
+        "name_en": "Portugal",
+        "name_ar": "البرتغال",
+        "gmt_offset": -3600
     },
     {
-        "id":  178,
-        "iso2":  "PR",
-        "name_en":  "Puerto Rico",
-        "name_ar":  "Ø¨ÙˆØ±ØªÙˆØ±ÙŠÙƒÙˆ",
-        "gmt_offset":  -14400
+        "id": 178,
+        "iso2": "PR",
+        "name_en": "Puerto Rico",
+        "name_ar": "بورتوريكو",
+        "gmt_offset": -14400
     },
     {
-        "id":  179,
-        "iso2":  "QA",
-        "name_en":  "Qatar",
-        "name_ar":  "Ù‚Ø·Ø±",
-        "gmt_offset":  10800
+        "id": 179,
+        "iso2": "QA",
+        "name_en": "Qatar",
+        "name_ar": "قطر",
+        "gmt_offset": 10800
     },
     {
-        "id":  180,
-        "iso2":  "RE",
-        "name_en":  "Reunion",
-        "name_ar":  "Ø¬Ù…Ø¹ Ø´Ù…Ù„",
-        "gmt_offset":  14400
+        "id": 180,
+        "iso2": "RE",
+        "name_en": "Reunion",
+        "name_ar": "جمع شمل",
+        "gmt_offset": 14400
     },
     {
-        "id":  181,
-        "iso2":  "RO",
-        "name_en":  "Romania",
-        "name_ar":  "Ø±ÙˆÙ…Ø§Ù†ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 181,
+        "iso2": "RO",
+        "name_en": "Romania",
+        "name_ar": "رومانيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  182,
-        "iso2":  "RU",
-        "name_en":  "Russia",
-        "name_ar":  "Ø±ÙˆØ³ÙŠØ§",
-        "gmt_offset":  43200
+        "id": 182,
+        "iso2": "RU",
+        "name_en": "Russia",
+        "name_ar": "روسيا",
+        "gmt_offset": 43200
     },
     {
-        "id":  183,
-        "iso2":  "RW",
-        "name_en":  "Rwanda",
-        "name_ar":  "Ø±ÙˆØ§Ù†Ø¯Ø§",
-        "gmt_offset":  7200
+        "id": 183,
+        "iso2": "RW",
+        "name_en": "Rwanda",
+        "name_ar": "رواندا",
+        "gmt_offset": 7200
     },
     {
-        "id":  184,
-        "iso2":  "SH",
-        "name_en":  "Saint Helena",
-        "name_ar":  "Ø³Ø§Ù†Øª Ù‡ÙŠÙ„Ø§Ù†Ø©",
-        "gmt_offset":  0
+        "id": 184,
+        "iso2": "SH",
+        "name_en": "Saint Helena",
+        "name_ar": "سانت هيلانة",
+        "gmt_offset": 0
     },
     {
-        "id":  185,
-        "iso2":  "KN",
-        "name_en":  "Saint Kitts and Nevis",
-        "name_ar":  "Ø³Ø§Ù†Øª ÙƒÙŠØªØ³ ÙˆÙ†ÙŠÙÙŠØ³",
-        "gmt_offset":  -14400
+        "id": 185,
+        "iso2": "KN",
+        "name_en": "Saint Kitts and Nevis",
+        "name_ar": "سانت كيتس ونيفيس",
+        "gmt_offset": -14400
     },
     {
-        "id":  186,
-        "iso2":  "LC",
-        "name_en":  "Saint Lucia",
-        "name_ar":  "Ø³Ø§Ù†Øª Ù„ÙˆØ³ÙŠØ§",
-        "gmt_offset":  -14400
+        "id": 186,
+        "iso2": "LC",
+        "name_en": "Saint Lucia",
+        "name_ar": "سانت لوسيا",
+        "gmt_offset": -14400
     },
     {
-        "id":  187,
-        "iso2":  "PM",
-        "name_en":  "Saint Pierre and Miquelon",
-        "name_ar":  "Ø§Ù„Ù‚Ø¯ÙŠØ³ Ø¨ÙŠÙŠØ± ÙˆÙ…ÙŠÙƒÙ„ÙˆÙ†",
-        "gmt_offset":  -10800
+        "id": 187,
+        "iso2": "PM",
+        "name_en": "Saint Pierre and Miquelon",
+        "name_ar": "القديس بيير وميكلون",
+        "gmt_offset": -10800
     },
     {
-        "id":  188,
-        "iso2":  "VC",
-        "name_en":  "Saint Vincent and the Grenadines",
-        "name_ar":  "Ø§Ù„Ù‚Ø¯ÙŠØ³ ÙÙ†Ø³Ù†Øª ÙˆØ¬Ø±ÙŠÙ†Ø§Ø¯ÙŠÙ†",
-        "gmt_offset":  -14400
+        "id": 188,
+        "iso2": "VC",
+        "name_en": "Saint Vincent and the Grenadines",
+        "name_ar": "القديس فنسنت وجرينادين",
+        "gmt_offset": -14400
     },
     {
-        "id":  189,
-        "iso2":  "BL",
-        "name_en":  "Saint-Barthelemy",
-        "name_ar":  "Ø³Ø§Ù† Ø¨Ø§Ø±Ø«ÙŠÙ„ÙŠÙ…ÙŠ",
-        "gmt_offset":  -14400
+        "id": 189,
+        "iso2": "BL",
+        "name_en": "Saint-Barthelemy",
+        "name_ar": "سان بارثيليمي",
+        "gmt_offset": -14400
     },
     {
-        "id":  190,
-        "iso2":  "MF",
-        "name_en":  "Saint-Martin (French part)",
-        "name_ar":  "Ø³Ø§Ù† Ù…Ø§Ø±ØªÙ† (Ø§Ù„Ø¬Ø²Ø¡ Ø§Ù„ÙØ±Ù†Ø³ÙŠ)",
-        "gmt_offset":  -14400
+        "id": 190,
+        "iso2": "MF",
+        "name_en": "Saint-Martin (French part)",
+        "name_ar": "سان مارتن (الجزء الفرنسي)",
+        "gmt_offset": -14400
     },
     {
-        "id":  191,
-        "iso2":  "WS",
-        "name_en":  "Samoa",
-        "name_ar":  "Ø³Ø§Ù…ÙˆØ§",
-        "gmt_offset":  50400
+        "id": 191,
+        "iso2": "WS",
+        "name_en": "Samoa",
+        "name_ar": "ساموا",
+        "gmt_offset": 50400
     },
     {
-        "id":  192,
-        "iso2":  "SM",
-        "name_en":  "San Marino",
-        "name_ar":  "Ø³Ø§Ù† Ù…Ø§Ø±ÙŠÙ†Ùˆ",
-        "gmt_offset":  3600
+        "id": 192,
+        "iso2": "SM",
+        "name_en": "San Marino",
+        "name_ar": "سان مارينو",
+        "gmt_offset": 3600
     },
     {
-        "id":  193,
-        "iso2":  "ST",
-        "name_en":  "Sao Tome and Principe",
-        "name_ar":  "Ø³Ø§Ùˆ ØªÙˆÙ…ÙŠ ÙˆØ¨Ø±ÙŠÙ†Ø³ÙŠØ¨ÙŠ",
-        "gmt_offset":  0
+        "id": 193,
+        "iso2": "ST",
+        "name_en": "Sao Tome and Principe",
+        "name_ar": "ساو تومي وبرينسيبي",
+        "gmt_offset": 0
     },
     {
-        "id":  194,
-        "iso2":  "SA",
-        "name_en":  "Saudi Arabia",
-        "name_ar":  "Ø§Ù„Ù…Ù…Ù„ÙƒØ© Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ©",
-        "gmt_offset":  10800
+        "id": 194,
+        "iso2": "SA",
+        "name_en": "Saudi Arabia",
+        "name_ar": "المملكة العربية السعودية",
+        "gmt_offset": 10800
     },
     {
-        "id":  195,
-        "iso2":  "SN",
-        "name_en":  "Senegal",
-        "name_ar":  "Ø§Ù„Ø³Ù†ØºØ§Ù„",
-        "gmt_offset":  0
+        "id": 195,
+        "iso2": "SN",
+        "name_en": "Senegal",
+        "name_ar": "السنغال",
+        "gmt_offset": 0
     },
     {
-        "id":  196,
-        "iso2":  "RS",
-        "name_en":  "Serbia",
-        "name_ar":  "ØµØ±Ø¨ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 196,
+        "iso2": "RS",
+        "name_en": "Serbia",
+        "name_ar": "صربيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  197,
-        "iso2":  "SC",
-        "name_en":  "Seychelles",
-        "name_ar":  "Ø³ÙŠØ´ÙŠÙ„",
-        "gmt_offset":  14400
+        "id": 197,
+        "iso2": "SC",
+        "name_en": "Seychelles",
+        "name_ar": "سيشيل",
+        "gmt_offset": 14400
     },
     {
-        "id":  198,
-        "iso2":  "SL",
-        "name_en":  "Sierra Leone",
-        "name_ar":  "Ø³ÙŠØ±Ø§Ù„ÙŠÙˆÙ†",
-        "gmt_offset":  0
+        "id": 198,
+        "iso2": "SL",
+        "name_en": "Sierra Leone",
+        "name_ar": "سيراليون",
+        "gmt_offset": 0
     },
     {
-        "id":  199,
-        "iso2":  "SG",
-        "name_en":  "Singapore",
-        "name_ar":  "Ø³Ù†ØºØ§ÙÙˆØ±Ø©",
-        "gmt_offset":  28800
+        "id": 199,
+        "iso2": "SG",
+        "name_en": "Singapore",
+        "name_ar": "سنغافورة",
+        "gmt_offset": 28800
     },
     {
-        "id":  250,
-        "iso2":  "SX",
-        "name_en":  "Sint Maarten (Dutch part)",
-        "name_ar":  "Ø³ÙŠÙ†Øª Ù…Ø§Ø±ØªÙ† (Ø§Ù„Ø¬Ø²Ø¡ Ø§Ù„Ù‡ÙˆÙ„Ù†Ø¯ÙŠ)",
-        "gmt_offset":  -14400
+        "id": 250,
+        "iso2": "SX",
+        "name_en": "Sint Maarten (Dutch part)",
+        "name_ar": "سينت مارتن (الجزء الهولندي)",
+        "gmt_offset": -14400
     },
     {
-        "id":  200,
-        "iso2":  "SK",
-        "name_en":  "Slovakia",
-        "name_ar":  "Ø³Ù„ÙˆÙØ§ÙƒÙŠØ§",
-        "gmt_offset":  3600
+        "id": 200,
+        "iso2": "SK",
+        "name_en": "Slovakia",
+        "name_ar": "سلوفاكيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  201,
-        "iso2":  "SI",
-        "name_en":  "Slovenia",
-        "name_ar":  "Ø³Ù„ÙˆÙÙŠÙ†ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 201,
+        "iso2": "SI",
+        "name_en": "Slovenia",
+        "name_ar": "سلوفينيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  202,
-        "iso2":  "SB",
-        "name_en":  "Solomon Islands",
-        "name_ar":  "Ø¬Ø²Ø± Ø³Ù„ÙŠÙ…Ø§Ù†",
-        "gmt_offset":  39600
+        "id": 202,
+        "iso2": "SB",
+        "name_en": "Solomon Islands",
+        "name_ar": "جزر سليمان",
+        "gmt_offset": 39600
     },
     {
-        "id":  203,
-        "iso2":  "SO",
-        "name_en":  "Somalia",
-        "name_ar":  "Ø§Ù„ØµÙˆÙ…Ø§Ù„",
-        "gmt_offset":  10800
+        "id": 203,
+        "iso2": "SO",
+        "name_en": "Somalia",
+        "name_ar": "الصومال",
+        "gmt_offset": 10800
     },
     {
-        "id":  204,
-        "iso2":  "ZA",
-        "name_en":  "South Africa",
-        "name_ar":  "Ø¬Ù†ÙˆØ¨ Ø£ÙØ±ÙŠÙ‚ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 204,
+        "iso2": "ZA",
+        "name_en": "South Africa",
+        "name_ar": "جنوب أفريقيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  205,
-        "iso2":  "GS",
-        "name_en":  "South Georgia",
-        "name_ar":  "Ø¬Ù†ÙˆØ¨ Ø¬ÙˆØ±Ø¬ÙŠØ§",
-        "gmt_offset":  -7200
+        "id": 205,
+        "iso2": "GS",
+        "name_en": "South Georgia",
+        "name_ar": "جنوب جورجيا",
+        "gmt_offset": -7200
     },
     {
-        "id":  116,
-        "iso2":  "KR",
-        "name_en":  "South Korea",
-        "name_ar":  "ÙƒÙˆØ±ÙŠØ§ Ø§Ù„Ø¬Ù†ÙˆØ¨ÙŠØ©",
-        "gmt_offset":  32400
+        "id": 116,
+        "iso2": "KR",
+        "name_en": "South Korea",
+        "name_ar": "كوريا الجنوبية",
+        "gmt_offset": 32400
     },
     {
-        "id":  206,
-        "iso2":  "SS",
-        "name_en":  "South Sudan",
-        "name_ar":  "Ø¬Ù†ÙˆØ¨ Ø§Ù„Ø³ÙˆØ¯Ø§Ù†",
-        "gmt_offset":  10800
+        "id": 206,
+        "iso2": "SS",
+        "name_en": "South Sudan",
+        "name_ar": "جنوب السودان",
+        "gmt_offset": 10800
     },
     {
-        "id":  207,
-        "iso2":  "ES",
-        "name_en":  "Spain",
-        "name_ar":  "Ø¥Ø³Ø¨Ø§Ù†ÙŠØ§",
-        "gmt_offset":  3600
+        "id": 207,
+        "iso2": "ES",
+        "name_en": "Spain",
+        "name_ar": "إسبانيا",
+        "gmt_offset": 3600
     },
     {
-        "id":  208,
-        "iso2":  "LK",
-        "name_en":  "Sri Lanka",
-        "name_ar":  "Ø³Ø±ÙŠ Ù„Ø§Ù†ÙƒØ§",
-        "gmt_offset":  19800
+        "id": 208,
+        "iso2": "LK",
+        "name_en": "Sri Lanka",
+        "name_ar": "سري لانكا",
+        "gmt_offset": 19800
     },
     {
-        "id":  209,
-        "iso2":  "SD",
-        "name_en":  "Sudan",
-        "name_ar":  "Ø§Ù„Ø³ÙˆØ¯Ø§Ù†",
-        "gmt_offset":  7200
+        "id": 209,
+        "iso2": "SD",
+        "name_en": "Sudan",
+        "name_ar": "السودان",
+        "gmt_offset": 7200
     },
     {
-        "id":  210,
-        "iso2":  "SR",
-        "name_en":  "Suriname",
-        "name_ar":  "Ø³ÙˆØ±ÙŠÙ†Ø§Ù…",
-        "gmt_offset":  -10800
+        "id": 210,
+        "iso2": "SR",
+        "name_en": "Suriname",
+        "name_ar": "سورينام",
+        "gmt_offset": -10800
     },
     {
-        "id":  211,
-        "iso2":  "SJ",
-        "name_en":  "Svalbard and Jan Mayen Islands",
-        "name_ar":  "Ø¬Ø²Ø± Ø³ÙØ§Ù„Ø¨Ø§Ø±Ø¯ ÙˆØ¬Ø§Ù† Ù…Ø§ÙŠÙ†",
-        "gmt_offset":  3600
+        "id": 211,
+        "iso2": "SJ",
+        "name_en": "Svalbard and Jan Mayen Islands",
+        "name_ar": "جزر سفالبارد وجان ماين",
+        "gmt_offset": 3600
     },
     {
-        "id":  213,
-        "iso2":  "SE",
-        "name_en":  "Sweden",
-        "name_ar":  "Ø§Ù„Ø³ÙˆÙŠØ¯",
-        "gmt_offset":  3600
+        "id": 213,
+        "iso2": "SE",
+        "name_en": "Sweden",
+        "name_ar": "السويد",
+        "gmt_offset": 3600
     },
     {
-        "id":  214,
-        "iso2":  "CH",
-        "name_en":  "Switzerland",
-        "name_ar":  "Ø³ÙˆÙŠØ³Ø±Ø§",
-        "gmt_offset":  3600
+        "id": 214,
+        "iso2": "CH",
+        "name_en": "Switzerland",
+        "name_ar": "سويسرا",
+        "gmt_offset": 3600
     },
     {
-        "id":  215,
-        "iso2":  "SY",
-        "name_en":  "Syria",
-        "name_ar":  "Ø³ÙˆØ±ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 215,
+        "iso2": "SY",
+        "name_en": "Syria",
+        "name_ar": "سوريا",
+        "gmt_offset": 7200
     },
     {
-        "id":  216,
-        "iso2":  "TW",
-        "name_en":  "Taiwan",
-        "name_ar":  "ØªØ§ÙŠÙˆØ§Ù†",
-        "gmt_offset":  28800
+        "id": 216,
+        "iso2": "TW",
+        "name_en": "Taiwan",
+        "name_ar": "تايوان",
+        "gmt_offset": 28800
     },
     {
-        "id":  217,
-        "iso2":  "TJ",
-        "name_en":  "Tajikistan",
-        "name_ar":  "Ø·Ø§Ø¬ÙŠÙƒØ³ØªØ§Ù†",
-        "gmt_offset":  18000
+        "id": 217,
+        "iso2": "TJ",
+        "name_en": "Tajikistan",
+        "name_ar": "طاجيكستان",
+        "gmt_offset": 18000
     },
     {
-        "id":  218,
-        "iso2":  "TZ",
-        "name_en":  "Tanzania",
-        "name_ar":  "ØªÙ†Ø²Ø§Ù†ÙŠØ§",
-        "gmt_offset":  10800
+        "id": 218,
+        "iso2": "TZ",
+        "name_en": "Tanzania",
+        "name_ar": "تنزانيا",
+        "gmt_offset": 10800
     },
     {
-        "id":  219,
-        "iso2":  "TH",
-        "name_en":  "Thailand",
-        "name_ar":  "ØªØ§ÙŠÙ„Ø§Ù†Ø¯",
-        "gmt_offset":  25200
+        "id": 219,
+        "iso2": "TH",
+        "name_en": "Thailand",
+        "name_ar": "تايلاند",
+        "gmt_offset": 25200
     },
     {
-        "id":  17,
-        "iso2":  "BS",
-        "name_en":  "The Bahamas",
-        "name_ar":  "Ø¬Ø²Ø± Ø§Ù„Ø¨Ù‡Ø§Ù…Ø§",
-        "gmt_offset":  -18000
+        "id": 17,
+        "iso2": "BS",
+        "name_en": "The Bahamas",
+        "name_ar": "جزر البهاما",
+        "gmt_offset": -18000
     },
     {
-        "id":  80,
-        "iso2":  "GM",
-        "name_en":  "The Gambia",
-        "name_ar":  "ØºØ§Ù…Ø¨ÙŠØ§",
-        "gmt_offset":  0
+        "id": 80,
+        "iso2": "GM",
+        "name_en": "The Gambia",
+        "name_ar": "غامبيا",
+        "gmt_offset": 0
     },
     {
-        "id":  63,
-        "iso2":  "TL",
-        "name_en":  "Timor-Leste",
-        "name_ar":  "ØªÙŠÙ…ÙˆØ± Ù‚Ø±Ø§Ø¡Ø©",
-        "gmt_offset":  32400
+        "id": 63,
+        "iso2": "TL",
+        "name_en": "Timor-Leste",
+        "name_ar": "تيمور قراءة",
+        "gmt_offset": 32400
     },
     {
-        "id":  220,
-        "iso2":  "TG",
-        "name_en":  "Togo",
-        "name_ar":  "ØªÙˆØºÙˆ",
-        "gmt_offset":  0
+        "id": 220,
+        "iso2": "TG",
+        "name_en": "Togo",
+        "name_ar": "توغو",
+        "gmt_offset": 0
     },
     {
-        "id":  221,
-        "iso2":  "TK",
-        "name_en":  "Tokelau",
-        "name_ar":  "ØªÙˆÙƒÙŠÙ„Ø§Ùˆ",
-        "gmt_offset":  46800
+        "id": 221,
+        "iso2": "TK",
+        "name_en": "Tokelau",
+        "name_ar": "توكيلاو",
+        "gmt_offset": 46800
     },
     {
-        "id":  222,
-        "iso2":  "TO",
-        "name_en":  "Tonga",
-        "name_ar":  "ØªÙˆÙ†ØºØ§",
-        "gmt_offset":  46800
+        "id": 222,
+        "iso2": "TO",
+        "name_en": "Tonga",
+        "name_ar": "تونغا",
+        "gmt_offset": 46800
     },
     {
-        "id":  223,
-        "iso2":  "TT",
-        "name_en":  "Trinidad and Tobago",
-        "name_ar":  "ØªØ±ÙŠÙ†ÙŠØ¯Ø§Ø¯ ÙˆØªÙˆØ¨Ø§ØºÙˆ",
-        "gmt_offset":  -14400
+        "id": 223,
+        "iso2": "TT",
+        "name_en": "Trinidad and Tobago",
+        "name_ar": "ترينيداد وتوباغو",
+        "gmt_offset": -14400
     },
     {
-        "id":  224,
-        "iso2":  "TN",
-        "name_en":  "Tunisia",
-        "name_ar":  "ØªÙˆÙ†Ø³",
-        "gmt_offset":  3600
+        "id": 224,
+        "iso2": "TN",
+        "name_en": "Tunisia",
+        "name_ar": "تونس",
+        "gmt_offset": 3600
     },
     {
-        "id":  225,
-        "iso2":  "TR",
-        "name_en":  "Turkey",
-        "name_ar":  "Ø¯ÙŠÙƒ Ø±ÙˆÙ…Ù‰",
-        "gmt_offset":  10800
+        "id": 225,
+        "iso2": "TR",
+        "name_en": "Turkey",
+        "name_ar": "ديك رومى",
+        "gmt_offset": 10800
     },
     {
-        "id":  226,
-        "iso2":  "TM",
-        "name_en":  "Turkmenistan",
-        "name_ar":  "ØªØ±ÙƒÙ…Ø§Ù†Ø³ØªØ§Ù†",
-        "gmt_offset":  18000
+        "id": 226,
+        "iso2": "TM",
+        "name_en": "Turkmenistan",
+        "name_ar": "تركمانستان",
+        "gmt_offset": 18000
     },
     {
-        "id":  227,
-        "iso2":  "TC",
-        "name_en":  "Turks and Caicos Islands",
-        "name_ar":  "Ø¬Ø²Ø± Ø§Ù„Ø£ØªØ±Ø§Ùƒ ÙˆÙƒØ§ÙŠÙƒÙˆØ³",
-        "gmt_offset":  -18000
+        "id": 227,
+        "iso2": "TC",
+        "name_en": "Turks and Caicos Islands",
+        "name_ar": "جزر الأتراك وكايكوس",
+        "gmt_offset": -18000
     },
     {
-        "id":  228,
-        "iso2":  "TV",
-        "name_en":  "Tuvalu",
-        "name_ar":  "ØªÙˆÙØ§Ù„Ùˆ",
-        "gmt_offset":  43200
+        "id": 228,
+        "iso2": "TV",
+        "name_en": "Tuvalu",
+        "name_ar": "توفالو",
+        "gmt_offset": 43200
     },
     {
-        "id":  229,
-        "iso2":  "UG",
-        "name_en":  "Uganda",
-        "name_ar":  "Ø£ÙˆØºÙ†Ø¯Ø§",
-        "gmt_offset":  10800
+        "id": 229,
+        "iso2": "UG",
+        "name_en": "Uganda",
+        "name_ar": "أوغندا",
+        "gmt_offset": 10800
     },
     {
-        "id":  230,
-        "iso2":  "UA",
-        "name_en":  "Ukraine",
-        "name_ar":  "Ø£ÙˆÙƒØ±Ø§Ù†ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 230,
+        "iso2": "UA",
+        "name_en": "Ukraine",
+        "name_ar": "أوكرانيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  231,
-        "iso2":  "AE",
-        "name_en":  "United Arab Emirates",
-        "name_ar":  "Ø§Ù„Ø¥Ù…Ø§Ø±Ø§Øª Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© Ø§Ù„Ù…ØªØ­Ø¯Ø©",
-        "gmt_offset":  14400
+        "id": 231,
+        "iso2": "AE",
+        "name_en": "United Arab Emirates",
+        "name_ar": "الإمارات العربية المتحدة",
+        "gmt_offset": 14400
     },
     {
-        "id":  232,
-        "iso2":  "GB",
-        "name_en":  "United Kingdom",
-        "name_ar":  "Ø§Ù„Ù…Ù…Ù„ÙƒØ© Ø§Ù„Ù…ØªØ­Ø¯Ø©",
-        "gmt_offset":  0
+        "id": 232,
+        "iso2": "GB",
+        "name_en": "United Kingdom",
+        "name_ar": "المملكة المتحدة",
+        "gmt_offset": 0
     },
     {
-        "id":  233,
-        "iso2":  "US",
-        "name_en":  "United States",
-        "name_ar":  "Ø§Ù„ÙˆÙ„Ø§ÙŠØ§Øª Ø§Ù„Ù…ØªØ­Ø¯Ø©",
-        "gmt_offset":  -36000
+        "id": 233,
+        "iso2": "US",
+        "name_en": "United States",
+        "name_ar": "الولايات المتحدة",
+        "gmt_offset": -36000
     },
     {
-        "id":  234,
-        "iso2":  "UM",
-        "name_en":  "United States Minor Outlying Islands",
-        "name_ar":  "Ø§Ù„ÙˆÙ„Ø§ÙŠØ§Øª Ø§Ù„Ù…ØªØ­Ø¯Ø© Ø§Ù„Ø¬Ø²Ø± Ø§Ù„Ø¨Ø¹ÙŠØ¯Ø© Ø§Ù„ØµØºØ±Ù‰",
-        "gmt_offset":  -39600
+        "id": 234,
+        "iso2": "UM",
+        "name_en": "United States Minor Outlying Islands",
+        "name_ar": "الولايات المتحدة الجزر البعيدة الصغرى",
+        "gmt_offset": -39600
     },
     {
-        "id":  235,
-        "iso2":  "UY",
-        "name_en":  "Uruguay",
-        "name_ar":  "Ø£ÙˆØ±ÙˆØºÙˆØ§ÙŠ",
-        "gmt_offset":  -10800
+        "id": 235,
+        "iso2": "UY",
+        "name_en": "Uruguay",
+        "name_ar": "أوروغواي",
+        "gmt_offset": -10800
     },
     {
-        "id":  236,
-        "iso2":  "UZ",
-        "name_en":  "Uzbekistan",
-        "name_ar":  "Ø£ÙˆØ²Ø¨ÙƒØ³ØªØ§Ù†",
-        "gmt_offset":  18000
+        "id": 236,
+        "iso2": "UZ",
+        "name_en": "Uzbekistan",
+        "name_ar": "أوزبكستان",
+        "gmt_offset": 18000
     },
     {
-        "id":  237,
-        "iso2":  "VU",
-        "name_en":  "Vanuatu",
-        "name_ar":  "ÙØ§Ù†ÙˆØ§ØªÙˆ",
-        "gmt_offset":  39600
+        "id": 237,
+        "iso2": "VU",
+        "name_en": "Vanuatu",
+        "name_ar": "فانواتو",
+        "gmt_offset": 39600
     },
     {
-        "id":  238,
-        "iso2":  "VA",
-        "name_en":  "Vatican City State (Holy See)",
-        "name_ar":  "ÙˆÙ„Ø§ÙŠØ© Ù…Ø¯ÙŠÙ†Ø© Ø§Ù„ÙØ§ØªÙŠÙƒØ§Ù† (Ø§Ù„ÙƒØ±Ø³ÙŠ Ø§Ù„Ø±Ø³ÙˆÙ„ÙŠ)",
-        "gmt_offset":  3600
+        "id": 238,
+        "iso2": "VA",
+        "name_en": "Vatican City State (Holy See)",
+        "name_ar": "ولاية مدينة الفاتيكان (الكرسي الرسولي)",
+        "gmt_offset": 3600
     },
     {
-        "id":  239,
-        "iso2":  "VE",
-        "name_en":  "Venezuela",
-        "name_ar":  "ÙÙ†Ø²ÙˆÙŠÙ„Ø§",
-        "gmt_offset":  -14400
+        "id": 239,
+        "iso2": "VE",
+        "name_en": "Venezuela",
+        "name_ar": "فنزويلا",
+        "gmt_offset": -14400
     },
     {
-        "id":  240,
-        "iso2":  "VN",
-        "name_en":  "Vietnam",
-        "name_ar":  "ÙÙŠØªÙ†Ø§Ù…",
-        "gmt_offset":  25200
+        "id": 240,
+        "iso2": "VN",
+        "name_en": "Vietnam",
+        "name_ar": "فيتنام",
+        "gmt_offset": 25200
     },
     {
-        "id":  241,
-        "iso2":  "VG",
-        "name_en":  "Virgin Islands (British)",
-        "name_ar":  "Ø¬Ø²Ø± ÙÙŠØ±Ø¬Ù† (Ø§Ù„Ø¨Ø±ÙŠØ·Ø§Ù†ÙŠØ©)",
-        "gmt_offset":  -14400
+        "id": 241,
+        "iso2": "VG",
+        "name_en": "Virgin Islands (British)",
+        "name_ar": "جزر فيرجن (البريطانية)",
+        "gmt_offset": -14400
     },
     {
-        "id":  242,
-        "iso2":  "VI",
-        "name_en":  "Virgin Islands (US)",
-        "name_ar":  "Ø¬Ø²Ø± ÙÙŠØ±Ø¬Ù† (Ø§Ù„ÙˆÙ„Ø§ÙŠØ§Øª Ø§Ù„Ù…ØªØ­Ø¯Ø©)",
-        "gmt_offset":  -14400
+        "id": 242,
+        "iso2": "VI",
+        "name_en": "Virgin Islands (US)",
+        "name_ar": "جزر فيرجن (الولايات المتحدة)",
+        "gmt_offset": -14400
     },
     {
-        "id":  243,
-        "iso2":  "WF",
-        "name_en":  "Wallis and Futuna Islands",
-        "name_ar":  "Ø¬Ø²Ø± ÙˆØ§Ù„ÙŠØ³ ÙˆÙÙˆØªÙˆÙ†Ø§",
-        "gmt_offset":  43200
+        "id": 243,
+        "iso2": "WF",
+        "name_en": "Wallis and Futuna Islands",
+        "name_ar": "جزر واليس وفوتونا",
+        "gmt_offset": 43200
     },
     {
-        "id":  244,
-        "iso2":  "EH",
-        "name_en":  "Western Sahara",
-        "name_ar":  "Ø§Ù„ØµØ­Ø±Ø§Ø¡ Ø§Ù„ØºØ±Ø¨ÙŠØ©",
-        "gmt_offset":  3600
+        "id": 244,
+        "iso2": "EH",
+        "name_en": "Western Sahara",
+        "name_ar": "الصحراء الغربية",
+        "gmt_offset": 3600
     },
     {
-        "id":  245,
-        "iso2":  "YE",
-        "name_en":  "Yemen",
-        "name_ar":  "Ø§Ù„ÙŠÙ…Ù†",
-        "gmt_offset":  10800
+        "id": 245,
+        "iso2": "YE",
+        "name_en": "Yemen",
+        "name_ar": "اليمن",
+        "gmt_offset": 10800
     },
     {
-        "id":  246,
-        "iso2":  "ZM",
-        "name_en":  "Zambia",
-        "name_ar":  "Ø²Ø§Ù…Ø¨ÙŠØ§",
-        "gmt_offset":  7200
+        "id": 246,
+        "iso2": "ZM",
+        "name_en": "Zambia",
+        "name_ar": "زامبيا",
+        "gmt_offset": 7200
     },
     {
-        "id":  247,
-        "iso2":  "ZW",
-        "name_en":  "Zimbabwe",
-        "name_ar":  "Ø²ÙŠÙ…Ø¨Ø§Ø¨ÙˆÙŠ",
-        "gmt_offset":  7200
+        "id": 247,
+        "iso2": "ZW",
+        "name_en": "Zimbabwe",
+        "name_ar": "زيمبابوي",
+        "gmt_offset": 7200
     }
 ]

@@ -38,6 +38,22 @@ private:
 class NidaaApp : public wxApp {
 public:
     bool OnInit() override {
+        // Prevent multiple instances using a named mutex
+        m_singleInstanceMutex = CreateMutexW(nullptr, TRUE, L"Global\\NidaaPrayerTimesApp");
+        if (GetLastError() == ERROR_ALREADY_EXISTS) {
+            // Another instance is already running - bring its settings window to front
+            HWND existing = FindWindowW(nullptr, L"\x0625\x0639\x062F\x0627\x062F\x0627\x062A \x0646\x062F\x0627\x0621");
+            if (!existing)
+                existing = FindWindowW(nullptr, L"Nidaa Settings");
+            if (existing) {
+                SetForegroundWindow(existing);
+                if (IsIconic(existing)) ShowWindow(existing, SW_RESTORE);
+            }
+            if (m_singleInstanceMutex) CloseHandle(m_singleInstanceMutex);
+            m_singleInstanceMutex = nullptr;
+            return false;
+        }
+
         SpeechInit();
 
         auto& dm = DataManager::Instance();
@@ -102,6 +118,11 @@ public:
         delete m_trayIcon;
         m_trayIcon = nullptr;
         SpeechShutdown();
+        if (m_singleInstanceMutex) {
+            ReleaseMutex(m_singleInstanceMutex);
+            CloseHandle(m_singleInstanceMutex);
+            m_singleInstanceMutex = nullptr;
+        }
         return wxApp::OnExit();
     }
 
@@ -109,6 +130,7 @@ private:
     NidaaTrayIcon* m_trayIcon = nullptr;
     HotkeyFrame* m_hotkeyFrame = nullptr;
     SettingsFrame* m_settingsFrame = nullptr;
+    HANDLE m_singleInstanceMutex = nullptr;
 };
 
 wxIMPLEMENT_APP(NidaaApp);

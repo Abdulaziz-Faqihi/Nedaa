@@ -94,10 +94,11 @@ bool Updater::CheckForUpdate(std::wstring& installerPath) {
     if (!IsNewerVersion(version, NIDAA_VERSION)) return false;
 
     // Find the installer asset URL (browser_download_url for .exe file)
-    // Look for "browser_download_url" followed by a URL ending in .exe
+    // Prefer assets with "Setup" in the name (the Inno Setup installer)
     std::string searchKey = "\"browser_download_url\":";
     size_t pos = 0;
     std::string assetUrl;
+    std::string fallbackUrl;
     while ((pos = response.find(searchKey, pos)) != std::string::npos) {
         pos += searchKey.size();
         while (pos < response.size() && (response[pos] == ' ' || response[pos] == '"')) pos++;
@@ -105,13 +106,19 @@ bool Updater::CheckForUpdate(std::wstring& installerPath) {
         if (end == std::string::npos) break;
 
         std::string url = response.substr(pos, end - pos);
-        // Check if this is an .exe asset
         if (url.size() > 4 && url.substr(url.size() - 4) == ".exe") {
-            assetUrl = url;
-            break;
+            // Prefer URLs containing "Setup" (the installer, not the raw exe)
+            if (url.find("Setup") != std::string::npos) {
+                assetUrl = url;
+                break;
+            }
+            if (fallbackUrl.empty())
+                fallbackUrl = url;
         }
         pos = end;
     }
+    if (assetUrl.empty())
+        assetUrl = fallbackUrl;
 
     if (assetUrl.empty()) return false;
 

@@ -4,6 +4,8 @@
 #include "Cities.h"
 #include <wx/sizer.h>
 #include <wx/msw/wrapwin.h>
+#include <algorithm>
+#include <numeric>
 
 SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
     : wxFrame(nullptr, wxID_ANY,
@@ -103,7 +105,19 @@ void SettingsFrame::PopulateCountries() {
     m_countryIds.clear();
 
     const auto& countries = CitiesDatabase::Instance().GetCountries();
-    for (const auto& c : countries) {
+
+    // Build indices sorted alphabetically by current display language
+    std::vector<size_t> order(countries.size());
+    for (size_t i = 0; i < countries.size(); ++i) order[i] = i;
+    std::sort(order.begin(), order.end(), [&](size_t a, size_t b) {
+        if (m_currentLang == Language::AR)
+            return countries[a].nameAr < countries[b].nameAr;
+        else
+            return countries[a].nameEn < countries[b].nameEn;
+    });
+
+    for (size_t idx : order) {
+        const auto& c = countries[idx];
         if (m_currentLang == Language::AR)
             m_countryChoice->Append(c.nameAr);
         else
