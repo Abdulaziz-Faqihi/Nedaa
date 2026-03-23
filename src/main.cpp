@@ -20,14 +20,18 @@ public:
         , m_tray(tray)
     {
         Show(false);
-        Bind(wxEVT_QUERY_END_SESSION, [](wxCloseEvent& evt) { evt.Skip(); });
-        Bind(wxEVT_END_SESSION, [this](wxCloseEvent&) { Destroy(); });
     }
 
 protected:
     WXLRESULT MSWWindowProc(WXUINT msg, WXWPARAM wParam, WXLPARAM lParam) override {
         if (msg == WM_HOTKEY && static_cast<int>(wParam) == HOTKEY_ID) {
             if (m_tray) m_tray->OnHotkeyPressed();
+            return 0;
+        }
+        if (msg == WM_QUERYENDSESSION)
+            return TRUE;  // Allow shutdown
+        if (msg == WM_ENDSESSION) {
+            if (wParam) wxTheApp->ExitMainLoop();
             return 0;
         }
         return wxFrame::MSWWindowProc(msg, wParam, lParam);

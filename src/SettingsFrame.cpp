@@ -115,9 +115,6 @@ SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
 
     panel->SetSizer(mainSizer);
     Bind(wxEVT_CLOSE_WINDOW, &SettingsFrame::OnClose, this);
-    // Allow system shutdown without blocking - don't veto QUERY_END_SESSION
-    Bind(wxEVT_QUERY_END_SESSION, [](wxCloseEvent& evt) { evt.Skip(); });
-    Bind(wxEVT_END_SESSION, [this](wxCloseEvent&) { Destroy(); });
 
     LoadCurrentSettings();
 }
@@ -451,6 +448,16 @@ void SettingsFrame::OnSave(wxCommandEvent&) {
 
     // Defer hide until after event handling completes
     CallAfter([this]() { Hide(); });
+}
+
+WXLRESULT SettingsFrame::MSWWindowProc(WXUINT msg, WXWPARAM wParam, WXLPARAM lParam) {
+    if (msg == WM_QUERYENDSESSION)
+        return TRUE;  // Allow shutdown
+    if (msg == WM_ENDSESSION) {
+        if (wParam) wxTheApp->ExitMainLoop();
+        return 0;
+    }
+    return wxFrame::MSWWindowProc(msg, wParam, lParam);
 }
 
 void SettingsFrame::OnClose(wxCloseEvent& evt) {

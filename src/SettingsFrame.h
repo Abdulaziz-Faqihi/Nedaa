@@ -10,6 +10,9 @@ public:
     SettingsFrame(NidaaTrayIcon* tray);
     void RefreshUI();
 
+protected:
+    WXLRESULT MSWWindowProc(WXUINT msg, WXWPARAM wParam, WXLPARAM lParam) override;
+
 private:
     void OnSave(wxCommandEvent& evt);
     void OnClose(wxCloseEvent& evt);
