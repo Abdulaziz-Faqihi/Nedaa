@@ -2,7 +2,7 @@
 
 #define MyAppName "Nidaa"
 #define MyAppNameAr "نداء"
-#define MyAppVersion "1.12.0"
+#define MyAppVersion "1.13.0"
 #define MyAppPublisher "Nidaa"
 #define MyAppExeName "Nidaa.exe"
 #define MyBuildDir "build\Release"

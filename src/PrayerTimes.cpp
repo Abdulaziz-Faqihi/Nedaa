@@ -127,8 +127,14 @@ std::wstring PrayerTimesCalculator::FormatTime(double hours) {
     int h = static_cast<int>(hours);
     int m = static_cast<int>((hours - h) * 60.0 + 0.5);
     if (m >= 60) { h++; m -= 60; }
+
+    // 12-hour format
+    const wchar_t* period = (h >= 12) ? L" PM" : L" AM";
+    int h12 = h % 12;
+    if (h12 == 0) h12 = 12;
+
     std::wostringstream ss;
-    ss << std::setfill(L'0') << std::setw(2) << h << L":" << std::setw(2) << m;
+    ss << h12 << L":" << std::setfill(L'0') << std::setw(2) << m << period;
     return ss.str();
 }
 
