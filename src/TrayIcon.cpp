@@ -11,6 +11,7 @@
 #include <wx/wx.h>
 #include <ctime>
 #include <sstream>
+#include <thread>
 
 static const int HOTKEY_ID = 1;
 
@@ -70,16 +71,25 @@ void NidaaTrayIcon::OnCheckUpdate(wxCommandEvent&) {
     ConfigLoad(config);
     Language lang = static_cast<Language>(config.language);
 
-    std::wstring installerPath;
-    if (Updater::CheckForUpdate(installerPath)) {
-        SpeechSay(Lang::UpdateAvailable(lang));
-        ShellExecuteW(nullptr, L"open", installerPath.c_str(),
-                      L"/SILENT", nullptr, SW_SHOWNORMAL);
-        RemoveIcon();
-        wxTheApp->ExitMainLoop();
-    } else {
-        SpeechSay(Lang::NoUpdateAvailable(lang));
-    }
+    SpeechSay(Lang::MenuCheckUpdate(lang));
+
+    // Run network call in background thread to avoid UI freeze
+    std::thread([this, lang]() {
+        std::wstring installerPath;
+        bool found = Updater::CheckForUpdate(installerPath);
+
+        wxTheApp->CallAfter([this, found, installerPath, lang]() {
+            if (found) {
+                SpeechSay(Lang::UpdateAvailable(lang));
+                ShellExecuteW(nullptr, L"open", installerPath.c_str(),
+                              L"/SILENT", nullptr, SW_SHOWNORMAL);
+                RemoveIcon();
+                wxTheApp->ExitMainLoop();
+            } else {
+                SpeechSay(Lang::NoUpdateAvailable(lang));
+            }
+        });
+    }).detach();
 }
 
 void NidaaTrayIcon::OnExit(wxCommandEvent&) {

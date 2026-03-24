@@ -22,6 +22,7 @@ private:
     wxCheckBox* m_attachLogs = nullptr;
     wxButton* m_sendBtn = nullptr;
     wxStaticText* m_lblContactDetails = nullptr;
+    bool m_sending = false;
 
     Language m_lang;
 

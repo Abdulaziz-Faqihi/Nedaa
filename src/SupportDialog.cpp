@@ -3,6 +3,7 @@
 #include "Log.h"
 #include "Speech.h"
 #include <wx/sizer.h>
+#include <thread>
 
 SupportDialog::SupportDialog(wxWindow* parent, Language lang)
     : wxDialog(parent, wxID_ANY,
@@ -125,6 +126,8 @@ void SupportDialog::UpdateContactHint() {
 }
 
 void SupportDialog::OnSend(wxCommandEvent&) {
+    if (m_sending) return;
+
     wxString firstName = m_firstName->GetValue().Trim();
     wxString lastName = m_lastName->GetValue().Trim();
     wxString contact = m_contactDetails->GetValue().Trim();
@@ -158,22 +161,31 @@ void SupportDialog::OnSend(wxCommandEvent&) {
     fullMessage += L"Subject: " + subject.ToStdWstring() + L"\n";
     fullMessage += L"Message:\n" + message.ToStdWstring() + L"\n";
 
+    bool attachLogs = m_attachLogs->GetValue();
+
     SpeechSay(Lang::SendingLog(m_lang));
     m_sendBtn->Enable(false);
+    m_sending = true;
 
-    bool ok;
-    if (m_attachLogs->GetValue()) {
-        ok = LogSender::SendLogToTelegram(fullMessage);
-    } else {
-        ok = LogSender::SendTextToTelegram(fullMessage);
-    }
+    // Run network call in background thread to avoid UI freeze
+    std::thread([this, fullMessage, attachLogs]() {
+        bool ok;
+        if (attachLogs) {
+            ok = LogSender::SendLogToTelegram(fullMessage);
+        } else {
+            ok = LogSender::SendTextToTelegram(fullMessage);
+        }
 
-    m_sendBtn->Enable(true);
-
-    if (ok) {
-        SpeechSay(Lang::SupportSentSuccess(m_lang));
-        EndModal(wxID_OK);
-    } else {
-        SpeechSay(Lang::LogSentFailed(m_lang));
-    }
+        // Post result back to UI thread
+        CallAfter([this, ok]() {
+            m_sending = false;
+            m_sendBtn->Enable(true);
+            if (ok) {
+                SpeechSay(Lang::SupportSentSuccess(m_lang));
+                EndModal(wxID_OK);
+            } else {
+                SpeechSay(Lang::LogSentFailed(m_lang));
+            }
+        });
+    }).detach();
 }

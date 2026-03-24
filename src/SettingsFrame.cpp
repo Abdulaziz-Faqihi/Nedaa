@@ -11,6 +11,7 @@
 #include <wx/msw/wrapwin.h>
 #include <algorithm>
 #include <numeric>
+#include <thread>
 
 SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
     : wxFrame(nullptr, wxID_ANY,
@@ -234,15 +235,26 @@ void SettingsFrame::PopulateCalcMethods() {
 }
 
 void SettingsFrame::OnCheckUpdate(wxCommandEvent&) {
-    std::wstring installerPath;
-    if (Updater::CheckForUpdate(installerPath)) {
-        SpeechSay(Lang::UpdateAvailable(m_currentLang));
-        ShellExecuteW(nullptr, L"open", installerPath.c_str(),
-                      L"/SILENT", nullptr, SW_SHOWNORMAL);
-        wxTheApp->ExitMainLoop();
-    } else {
-        SpeechSay(Lang::NoUpdateAvailable(m_currentLang));
-    }
+    m_updateBtn->Enable(false);
+    SpeechSay(Lang::CheckUpdateButton(m_currentLang));
+
+    // Run network call in background thread to avoid UI freeze
+    std::thread([this]() {
+        std::wstring installerPath;
+        bool found = Updater::CheckForUpdate(installerPath);
+
+        CallAfter([this, found, installerPath]() {
+            m_updateBtn->Enable(true);
+            if (found) {
+                SpeechSay(Lang::UpdateAvailable(m_currentLang));
+                ShellExecuteW(nullptr, L"open", installerPath.c_str(),
+                              L"/SILENT", nullptr, SW_SHOWNORMAL);
+                wxTheApp->ExitMainLoop();
+            } else {
+                SpeechSay(Lang::NoUpdateAvailable(m_currentLang));
+            }
+        });
+    }).detach();
 }
 
 void SettingsFrame::OnSupport(wxCommandEvent&) {
