@@ -135,11 +135,20 @@ void NidaaTrayIcon::OnHotkeyPressed() {
 
     double latitude = 21.4225;   // Makkah fallback
     double longitude = 39.8262;
-    double timezone = 3.0;
     CalcMethodId calcMethod = CalcMethodId::UMM_AL_QURA;
 
+    // Use the system's local timezone (handles DST and multi-timezone countries)
+    time_t now = time(nullptr);
+    struct tm lt, gt;
+    localtime_s(&lt, &now);
+    gmtime_s(&gt, &now);
+    double timezone = static_cast<double>(lt.tm_hour - gt.tm_hour)
+                    + (lt.tm_min - gt.tm_min) / 60.0;
+    // Handle day boundary (e.g. local=23:00 UTC=01:00 next day)
+    if (timezone > 12.0) timezone -= 24.0;
+    if (timezone < -12.0) timezone += 24.0;
+
     if (country) {
-        timezone = country->timezoneHours;
         calcMethod = (config.calcMethod >= 0 && config.calcMethod < 8)
             ? static_cast<CalcMethodId>(config.calcMethod)
             : country->calcMethod;
@@ -158,10 +167,6 @@ void NidaaTrayIcon::OnHotkeyPressed() {
             }
         }
     }
-
-    time_t now = time(nullptr);
-    struct tm lt;
-    localtime_s(&lt, &now);
 
     PrayerTimesCalculator calc;
     auto schedule = calc.Calculate(
