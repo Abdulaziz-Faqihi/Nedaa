@@ -19,6 +19,43 @@ static std::string WideToUtf8(const std::wstring& wide) {
     return result;
 }
 
+static std::string DiscoverChatId(const std::string& token) {
+    std::string chatId;
+
+    HINTERNET hInet = InternetOpenA("Nidaa", INTERNET_OPEN_TYPE_PRECONFIG, nullptr, nullptr, 0);
+    if (!hInet) return "";
+
+    HINTERNET hConn = InternetConnectA(hInet, "api.telegram.org", INTERNET_DEFAULT_HTTPS_PORT,
+                                       nullptr, nullptr, INTERNET_SERVICE_HTTP, 0, 0);
+    if (!hConn) { InternetCloseHandle(hInet); return ""; }
+
+    std::string getUpdatesUrl = "/bot" + token + "/getUpdates?limit=1";
+    HINTERNET hReq = HttpOpenRequestA(hConn, "GET", getUpdatesUrl.c_str(), nullptr, nullptr,
+                                      nullptr, INTERNET_FLAG_SECURE | INTERNET_FLAG_RELOAD, 0);
+    if (!hReq) { InternetCloseHandle(hConn); InternetCloseHandle(hInet); return ""; }
+
+    if (HttpSendRequestA(hReq, nullptr, 0, nullptr, 0)) {
+        std::string resp;
+        char buf[4096];
+        DWORD bytesRead;
+        while (InternetReadFile(hReq, buf, sizeof(buf), &bytesRead) && bytesRead > 0) {
+            resp.append(buf, bytesRead);
+        }
+        auto chatIdPos = resp.find("\"chat\":{\"id\":");
+        if (chatIdPos != std::string::npos) {
+            chatIdPos += 13;
+            auto end = resp.find_first_of(",}", chatIdPos);
+            if (end != std::string::npos) {
+                chatId = resp.substr(chatIdPos, end - chatIdPos);
+            }
+        }
+    }
+    InternetCloseHandle(hReq);
+    InternetCloseHandle(hConn);
+    InternetCloseHandle(hInet);
+    return chatId;
+}
+
 bool LogSender::SendLogToTelegram(const std::wstring& userNote) {
     std::string logContent = Log::ReadLogFileUtf8();
     if (logContent.empty()) {
@@ -34,73 +71,48 @@ bool LogSender::SendLogToTelegram(const std::wstring& userNote) {
     header += "---\n";
     logContent = header + logContent;
 
-    // Truncate to 4000 chars (Telegram message limit is 4096)
-    if (logContent.size() > 4000) {
-        logContent = logContent.substr(logContent.size() - 4000);
-    }
-
-    // Build the Telegram API URL
     std::string token = TELEGRAM_BOT_TOKEN;
-    std::string url = "/bot" + token + "/sendMessage";
-
-    // URL-encode the message text
-    std::string escaped;
-    for (char c : logContent) {
-        if (isalnum((unsigned char)c) || c == '-' || c == '_' || c == '.' || c == '~') {
-            escaped += c;
-        } else {
-            char buf[4];
-            sprintf_s(buf, "%%%02X", (unsigned char)c);
-            escaped += buf;
-        }
-    }
-
-    // We need a chat_id. Use the TELEGRAM_CHAT_ID if set, otherwise use GetUpdates to find it.
     std::string chatId = TELEGRAM_CHAT_ID;
 
     if (chatId.empty()) {
-        // Try to get chat_id from recent updates
-        HINTERNET hInet = InternetOpenA("Nidaa", INTERNET_OPEN_TYPE_PRECONFIG, nullptr, nullptr, 0);
-        if (!hInet) return false;
-
-        std::string getUpdatesUrl = "/bot" + token + "/getUpdates?limit=1";
-        HINTERNET hConn = InternetConnectA(hInet, "api.telegram.org", INTERNET_DEFAULT_HTTPS_PORT,
-                                           nullptr, nullptr, INTERNET_SERVICE_HTTP, 0, 0);
-        if (!hConn) { InternetCloseHandle(hInet); return false; }
-
-        HINTERNET hReq = HttpOpenRequestA(hConn, "GET", getUpdatesUrl.c_str(), nullptr, nullptr,
-                                          nullptr, INTERNET_FLAG_SECURE | INTERNET_FLAG_RELOAD, 0);
-        if (!hReq) { InternetCloseHandle(hConn); InternetCloseHandle(hInet); return false; }
-
-        if (HttpSendRequestA(hReq, nullptr, 0, nullptr, 0)) {
-            std::string resp;
-            char buf[4096];
-            DWORD bytesRead;
-            while (InternetReadFile(hReq, buf, sizeof(buf), &bytesRead) && bytesRead > 0) {
-                resp.append(buf, bytesRead);
-            }
-            // Parse chat_id from response
-            auto chatIdPos = resp.find("\"chat\":{\"id\":");
-            if (chatIdPos != std::string::npos) {
-                chatIdPos += 13;  // length of "\"chat\":{\"id\":"
-                auto end = resp.find_first_of(",}", chatIdPos);
-                if (end != std::string::npos) {
-                    chatId = resp.substr(chatIdPos, end - chatIdPos);
-                }
-            }
-        }
-        InternetCloseHandle(hReq);
-        InternetCloseHandle(hConn);
-        InternetCloseHandle(hInet);
-
+        chatId = DiscoverChatId(token);
         if (chatId.empty()) {
             Log::Error(L"SendLogToTelegram: could not determine chat_id. Send /start to the bot first.");
             return false;
         }
     }
 
-    // Send the message
-    std::string postData = "chat_id=" + chatId + "&text=" + escaped;
+    // Build multipart/form-data to send log as a file via sendDocument
+    std::string boundary = "----NidaaLogBoundary9f8e7d6c";
+    std::string body;
+
+    // chat_id field
+    body += "--" + boundary + "\r\n";
+    body += "Content-Disposition: form-data; name=\"chat_id\"\r\n\r\n";
+    body += chatId + "\r\n";
+
+    // caption field (short description)
+    std::string caption = "Nidaa v" NIDAA_VERSION " log";
+    if (!userNote.empty()) {
+        caption += " - " + WideToUtf8(userNote);
+    }
+    if (caption.size() > 1024) caption = caption.substr(0, 1024);
+    body += "--" + boundary + "\r\n";
+    body += "Content-Disposition: form-data; name=\"caption\"\r\n\r\n";
+    body += caption + "\r\n";
+
+    // document field (the log file)
+    body += "--" + boundary + "\r\n";
+    body += "Content-Disposition: form-data; name=\"document\"; filename=\"nidaa.log\"\r\n";
+    body += "Content-Type: text/plain; charset=utf-8\r\n\r\n";
+    body += logContent + "\r\n";
+
+    // End boundary
+    body += "--" + boundary + "--\r\n";
+
+    // Send via WinINet
+    std::string url = "/bot" + token + "/sendDocument";
+    std::string contentType = "Content-Type: multipart/form-data; boundary=" + boundary + "\r\n";
 
     HINTERNET hInet = InternetOpenA("Nidaa", INTERNET_OPEN_TYPE_PRECONFIG, nullptr, nullptr, 0);
     if (!hInet) return false;
@@ -113,12 +125,10 @@ bool LogSender::SendLogToTelegram(const std::wstring& userNote) {
                                       nullptr, INTERNET_FLAG_SECURE | INTERNET_FLAG_RELOAD, 0);
     if (!hReq) { InternetCloseHandle(hConn); InternetCloseHandle(hInet); return false; }
 
-    const char* headers = "Content-Type: application/x-www-form-urlencoded\r\n";
-    bool ok = HttpSendRequestA(hReq, headers, (DWORD)strlen(headers),
-                               (void*)postData.data(), (DWORD)postData.size()) != 0;
+    bool ok = HttpSendRequestA(hReq, contentType.c_str(), (DWORD)contentType.size(),
+                               (void*)body.data(), (DWORD)body.size()) != 0;
 
     if (ok) {
-        // Check response
         std::string resp;
         char buf[4096];
         DWORD bytesRead;

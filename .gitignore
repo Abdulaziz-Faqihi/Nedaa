@@ -3,6 +3,7 @@ installer_output/
 .vs/
 .claude/
 src/secrets.h
+bot/
 *.obj
 *.exe
 *.pdb
