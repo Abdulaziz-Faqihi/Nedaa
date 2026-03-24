@@ -19,6 +19,16 @@ static std::string WideToUtf8(const std::wstring& wide) {
     return result;
 }
 
+// Truncate UTF-8 string at a safe boundary (don't cut multi-byte chars)
+static std::string TruncateUtf8(const std::string& s, size_t maxBytes) {
+    if (s.size() <= maxBytes) return s;
+    size_t pos = maxBytes;
+    // Walk back to find a valid UTF-8 start byte
+    while (pos > 0 && (s[pos] & 0xC0) == 0x80)
+        --pos;
+    return s.substr(0, pos);
+}
+
 static std::string DiscoverChatId(const std::string& token) {
     std::string chatId;
 
@@ -91,10 +101,10 @@ bool LogSender::SendLogToTelegram(const std::wstring& userNote) {
     body += "Content-Disposition: form-data; name=\"chat_id\"\r\n\r\n";
     body += chatId + "\r\n";
 
-    // caption field (support request summary)
+    // caption field (support request summary, Telegram limit 1024 chars)
     std::string caption = WideToUtf8(userNote);
     if (caption.empty()) caption = "Nidaa v" NIDAA_VERSION " log";
-    if (caption.size() > 1024) caption = caption.substr(0, 1024);
+    caption = TruncateUtf8(caption, 1024);
     body += "--" + boundary + "\r\n";
     body += "Content-Disposition: form-data; name=\"caption\"\r\n\r\n";
     body += caption + "\r\n";
@@ -135,8 +145,13 @@ bool LogSender::SendLogToTelegram(const std::wstring& userNote) {
         }
         ok = resp.find("\"ok\":true") != std::string::npos;
         if (!ok) {
-            Log::Error(L"SendLogToTelegram: API returned error");
+            // Log the actual API error for debugging
+            std::wstring wResp(resp.begin(), resp.end());
+            Log::Error(L"SendLogToTelegram: API error: " + wResp);
         }
+    } else {
+        DWORD err = GetLastError();
+        Log::Error(L"SendLogToTelegram: HttpSendRequest failed, error=" + std::to_wstring(err));
     }
 
     InternetCloseHandle(hReq);
@@ -199,7 +214,13 @@ bool LogSender::SendTextToTelegram(const std::wstring& text) {
             resp.append(buf, bytesRead);
         }
         ok = resp.find("\"ok\":true") != std::string::npos;
-        if (!ok) Log::Error(L"SendTextToTelegram: API returned error");
+        if (!ok) {
+            std::wstring wResp(resp.begin(), resp.end());
+            Log::Error(L"SendTextToTelegram: API error: " + wResp);
+        }
+    } else {
+        DWORD err = GetLastError();
+        Log::Error(L"SendTextToTelegram: HttpSendRequest failed, error=" + std::to_wstring(err));
     }
 
     InternetCloseHandle(hReq);

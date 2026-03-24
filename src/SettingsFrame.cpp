@@ -129,7 +129,6 @@ SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
 }
 
 void SettingsFrame::PopulateCountries() {
-    m_countryChoice->Freeze();
     m_countryChoice->Clear();
     m_countryIds.clear();
 
@@ -155,12 +154,9 @@ void SettingsFrame::PopulateCountries() {
     }
     if (!countries.empty())
         m_countryChoice->SetSelection(0);
-
-    m_countryChoice->Thaw();
 }
 
 void SettingsFrame::PopulateRegions() {
-    m_regionChoice->Freeze();
     m_regionChoice->Clear();
     m_stateIds.clear();
     m_saudiRegionIds.clear();
@@ -188,17 +184,15 @@ void SettingsFrame::PopulateRegions() {
         }
     }
 
+    m_regionChoice->Enable(m_regionChoice->GetCount() > 0);
     if (m_regionChoice->GetCount() > 0)
         m_regionChoice->SetSelection(0);
 
     Log::Info(L"PopulateRegions: " + std::to_wstring(m_regionChoice->GetCount()) + L" regions loaded"
               + (IsSaudiSelected() ? L" (Saudi)" : L" (countryId=" + std::to_wstring(GetSelectedCountryId()) + L")"));
-
-    m_regionChoice->Thaw();
 }
 
 void SettingsFrame::PopulateCities() {
-    m_cityChoice->Freeze();
     m_cityChoice->Clear();
     m_saudiCityIds.clear();
 
@@ -215,7 +209,7 @@ void SettingsFrame::PopulateCities() {
                 m_saudiCityIds.push_back(c->cityId);
             }
         }
-        m_cityChoice->Enable(true);
+        m_cityChoice->Enable(m_cityChoice->GetCount() > 0);
         if (m_cityChoice->GetCount() > 0)
             m_cityChoice->SetSelection(0);
     } else {
@@ -223,12 +217,9 @@ void SettingsFrame::PopulateCities() {
     }
 
     Log::Info(L"PopulateCities: " + std::to_wstring(m_cityChoice->GetCount()) + L" cities loaded");
-
-    m_cityChoice->Thaw();
 }
 
 void SettingsFrame::PopulateCalcMethods() {
-    m_calcMethodChoice->Freeze();
     m_calcMethodChoice->Clear();
 
     // First item: Auto (based on country)
@@ -240,7 +231,6 @@ void SettingsFrame::PopulateCalcMethods() {
     }
 
     m_calcMethodChoice->SetSelection(0);
-    m_calcMethodChoice->Thaw();
 }
 
 void SettingsFrame::OnCheckUpdate(wxCommandEvent&) {
