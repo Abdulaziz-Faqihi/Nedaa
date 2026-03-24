@@ -26,6 +26,7 @@ add_executable(Nidaa WIN32
     src/Updater.cpp
     src/Log.cpp
     src/LogSender.cpp
+    src/SupportDialog.cpp
 )
 
 target_include_directories(Nidaa PRIVATE src)

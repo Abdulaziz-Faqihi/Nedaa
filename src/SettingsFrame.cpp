@@ -6,7 +6,7 @@
 #include "Updater.h"
 #include "Speech.h"
 #include "Log.h"
-#include "LogSender.h"
+#include "SupportDialog.h"
 #include <wx/sizer.h>
 #include <wx/msw/wrapwin.h>
 #include <algorithm>
@@ -115,11 +115,11 @@ SettingsFrame::SettingsFrame(NidaaTrayIcon* tray)
         m_updateBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnCheckUpdate, this);
     }
 
-    // Send logs button
+    // Support button
     {
-        m_sendLogBtn = new wxButton(panel, ID_SEND_LOG, Lang::SendLogButton(Language::AR));
-        mainSizer->Add(m_sendLogBtn, 0, wxALIGN_CENTER | wxALL, 5);
-        m_sendLogBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnSendLog, this);
+        m_supportBtn = new wxButton(panel, ID_SUPPORT, Lang::SupportButton(Language::AR));
+        mainSizer->Add(m_supportBtn, 0, wxALIGN_CENTER | wxALL, 5);
+        m_supportBtn->Bind(wxEVT_BUTTON, &SettingsFrame::OnSupport, this);
     }
 
     panel->SetSizer(mainSizer);
@@ -255,13 +255,9 @@ void SettingsFrame::OnCheckUpdate(wxCommandEvent&) {
     }
 }
 
-void SettingsFrame::OnSendLog(wxCommandEvent&) {
-    SpeechSay(Lang::SendingLog(m_currentLang));
-    if (LogSender::SendLogToTelegram()) {
-        SpeechSay(Lang::LogSentSuccess(m_currentLang));
-    } else {
-        SpeechSay(Lang::LogSentFailed(m_currentLang));
-    }
+void SettingsFrame::OnSupport(wxCommandEvent&) {
+    SupportDialog dlg(this, m_currentLang);
+    dlg.ShowModal();
 }
 
 void SettingsFrame::RefreshUI() {
@@ -275,7 +271,7 @@ void SettingsFrame::RefreshUI() {
     m_lblKey->SetLabel(Lang::KeyLabel(m_currentLang));
     m_saveBtn->SetLabel(Lang::SaveButton(m_currentLang));
     m_updateBtn->SetLabel(Lang::CheckUpdateButton(m_currentLang));
-    m_sendLogBtn->SetLabel(Lang::SendLogButton(m_currentLang));
+    m_supportBtn->SetLabel(Lang::SupportButton(m_currentLang));
     m_countryChoice->SetName(Lang::CountryLabel(m_currentLang));
     m_regionChoice->SetName(Lang::RegionLabel(m_currentLang));
     m_cityChoice->SetName(Lang::CityLabel(m_currentLang));

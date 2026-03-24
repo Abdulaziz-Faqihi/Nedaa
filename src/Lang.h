@@ -50,8 +50,28 @@ namespace Lang {
     const wchar_t* CalcMethodAuto(Language lang);
 
     // Log sending
-    const wchar_t* SendLogButton(Language lang);
     const wchar_t* SendingLog(Language lang);
-    const wchar_t* LogSentSuccess(Language lang);
     const wchar_t* LogSentFailed(Language lang);
+
+    // Support dialog
+    const wchar_t* SupportButton(Language lang);
+    const wchar_t* SupportTitle(Language lang);
+    const wchar_t* SupportFirstName(Language lang);
+    const wchar_t* SupportLastName(Language lang);
+    const wchar_t* SupportType(Language lang);
+    const wchar_t* SupportTypeProblem(Language lang);
+    const wchar_t* SupportTypeFeature(Language lang);
+    const wchar_t* SupportContactMethod(Language lang);
+    const wchar_t* SupportContactWhatsApp(Language lang);
+    const wchar_t* SupportContactTelegram(Language lang);
+    const wchar_t* SupportContactEmail(Language lang);
+    const wchar_t* SupportContactDetailsWhatsApp(Language lang);
+    const wchar_t* SupportContactDetailsTelegram(Language lang);
+    const wchar_t* SupportContactDetailsEmail(Language lang);
+    const wchar_t* SupportSubject(Language lang);
+    const wchar_t* SupportMessage(Language lang);
+    const wchar_t* SupportAttachLogs(Language lang);
+    const wchar_t* SupportSendButton(Language lang);
+    const wchar_t* SupportFillRequired(Language lang);
+    const wchar_t* SupportSentSuccess(Language lang);
 }

@@ -217,28 +217,137 @@ const wchar_t* CalcMethodName(int index, Language lang) {
     }
 }
 
-const wchar_t* SendLogButton(Language lang) {
-    return lang == Language::AR
-        ? L"\x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A \x0644\x0644\x062F\x0639\x0645" // إرسال السجلات للدعم
-        : L"Send logs to support";
-}
-
 const wchar_t* SendingLog(Language lang) {
     return lang == Language::AR
-        ? L"\x062C\x0627\x0631\x064A \x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A" // جاري إرسال السجلات
-        : L"Sending logs...";
-}
-
-const wchar_t* LogSentSuccess(Language lang) {
-    return lang == Language::AR
-        ? L"\x062A\x0645 \x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A \x0628\x0646\x062C\x0627\x062D" // تم إرسال السجلات بنجاح
-        : L"Logs sent successfully";
+        ? L"\x062C\x0627\x0631\x064A \x0627\x0644\x0625\x0631\x0633\x0627\x0644..." // جاري الإرسال...
+        : L"Sending...";
 }
 
 const wchar_t* LogSentFailed(Language lang) {
     return lang == Language::AR
-        ? L"\x0641\x0634\x0644 \x0625\x0631\x0633\x0627\x0644 \x0627\x0644\x0633\x062C\x0644\x0627\x062A. \x0623\x0631\x0633\x0644 /start \x0644\x0644\x0628\x0648\x062A \x0623\x0648\x0644\x0627\x064B" // فشل إرسال السجلات. أرسل /start للبوت أولاً
-        : L"Failed to send logs. Send /start to the bot first.";
+        ? L"\x0641\x0634\x0644 \x0627\x0644\x0625\x0631\x0633\x0627\x0644" // فشل الإرسال
+        : L"Failed to send";
+}
+
+// Support dialog
+const wchar_t* SupportButton(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x062F\x0639\x0645" // الدعم
+        : L"Support";
+}
+
+const wchar_t* SupportTitle(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x062F\x0639\x0645 \x0627\x0644\x0641\x0646\x064A" // الدعم الفني
+        : L"Support";
+}
+
+const wchar_t* SupportFirstName(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x0627\x0633\x0645 \x0627\x0644\x0623\x0648\x0644:" // الاسم الأول:
+        : L"First name:";
+}
+
+const wchar_t* SupportLastName(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x0627\x0633\x0645 \x0627\x0644\x0623\x062E\x064A\x0631:" // الاسم الأخير:
+        : L"Last name:";
+}
+
+const wchar_t* SupportType(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x0646\x0648\x0639:" // النوع:
+        : L"Type:";
+}
+
+const wchar_t* SupportTypeProblem(Language lang) {
+    return lang == Language::AR
+        ? L"\x0645\x0634\x0643\x0644\x0629" // مشكلة
+        : L"Problem";
+}
+
+const wchar_t* SupportTypeFeature(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0642\x062A\x0631\x0627\x062D \x0645\x064A\x0632\x0629" // اقتراح ميزة
+        : L"Feature suggestion";
+}
+
+const wchar_t* SupportContactMethod(Language lang) {
+    return lang == Language::AR
+        ? L"\x0637\x0631\x064A\x0642\x0629 \x0627\x0644\x062A\x0648\x0627\x0635\x0644:" // طريقة التواصل:
+        : L"Contact method:";
+}
+
+const wchar_t* SupportContactWhatsApp(Language lang) {
+    return lang == Language::AR
+        ? L"\x0648\x0627\x062A\x0633\x0627\x0628" // واتساب
+        : L"WhatsApp";
+}
+
+const wchar_t* SupportContactTelegram(Language lang) {
+    return lang == Language::AR
+        ? L"\x062A\x064A\x0644\x064A\x062C\x0631\x0627\x0645" // تيليجرام
+        : L"Telegram";
+}
+
+const wchar_t* SupportContactEmail(Language lang) {
+    return lang == Language::AR
+        ? L"\x0628\x0631\x064A\x062F \x0625\x0644\x0643\x062A\x0631\x0648\x0646\x064A" // بريد إلكتروني
+        : L"Email";
+}
+
+const wchar_t* SupportContactDetailsWhatsApp(Language lang) {
+    return lang == Language::AR
+        ? L"\x0631\x0642\x0645 \x0627\x0644\x0648\x0627\x062A\x0633\x0627\x0628:" // رقم الواتساب:
+        : L"WhatsApp number:";
+}
+
+const wchar_t* SupportContactDetailsTelegram(Language lang) {
+    return lang == Language::AR
+        ? L"\x0645\x0639\x0631\x0641 \x0627\x0644\x062A\x064A\x0644\x064A\x062C\x0631\x0627\x0645:" // معرف التيليجرام:
+        : L"Telegram username:";
+}
+
+const wchar_t* SupportContactDetailsEmail(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x0628\x0631\x064A\x062F \x0627\x0644\x0625\x0644\x0643\x062A\x0631\x0648\x0646\x064A:" // البريد الإلكتروني:
+        : L"Email address:";
+}
+
+const wchar_t* SupportSubject(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x0645\x0648\x0636\x0648\x0639:" // الموضوع:
+        : L"Subject:";
+}
+
+const wchar_t* SupportMessage(Language lang) {
+    return lang == Language::AR
+        ? L"\x0627\x0644\x0631\x0633\x0627\x0644\x0629:" // الرسالة:
+        : L"Message:";
+}
+
+const wchar_t* SupportAttachLogs(Language lang) {
+    return lang == Language::AR
+        ? L"\x0625\x0631\x0641\x0627\x0642 \x0627\x0644\x0633\x062C\x0644\x0627\x062A" // إرفاق السجلات
+        : L"Attach logs";
+}
+
+const wchar_t* SupportSendButton(Language lang) {
+    return lang == Language::AR
+        ? L"\x0625\x0631\x0633\x0627\x0644" // إرسال
+        : L"Send";
+}
+
+const wchar_t* SupportFillRequired(Language lang) {
+    return lang == Language::AR
+        ? L"\x064A\x0631\x062C\x0649 \x062A\x0639\x0628\x0626\x0629 \x0627\x0644\x0627\x0633\x0645 \x0648\x0627\x0644\x0645\x0648\x0636\x0648\x0639 \x0648\x0627\x0644\x0631\x0633\x0627\x0644\x0629" // يرجى تعبئة الاسم والموضوع والرسالة
+        : L"Please fill in name, subject, and message";
+}
+
+const wchar_t* SupportSentSuccess(Language lang) {
+    return lang == Language::AR
+        ? L"\x062A\x0645 \x0625\x0631\x0633\x0627\x0644 \x0637\x0644\x0628 \x0627\x0644\x062F\x0639\x0645 \x0628\x0646\x062C\x0627\x062D" // تم إرسال طلب الدعم بنجاح
+        : L"Support request sent successfully";
 }
 
 } // namespace Lang
